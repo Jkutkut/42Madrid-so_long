@@ -1,0 +1,11 @@
+.vscode
+bin
+a.out
+*.out
+libft*
+run
+norminette_tester.sh
+
+test*
+tester*
+printfTest*
