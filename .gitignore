@@ -9,3 +9,5 @@ norminette_tester.sh
 test*
 tester*
 printfTest*
+
+.nope*
