@@ -1,5 +1,5 @@
 // #include <mlx.h>
-#include "../minilibx-linux/mlx.h"
+#include "../mlx_linux/mlx.h"
 
 int	main(void)
 {
