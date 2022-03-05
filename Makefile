@@ -5,9 +5,9 @@ COMPILE			=	$(CC) $(FLAGS)
 MANDATORY_EXE	=	so_long
 
 # Binaries variables
-# SRCS_MANDATORY	=	
+SRCS_MANDATORY	=	src/end.c
 
-# BINS_MANDATORY	=	${SRCS_MANDATORY:%.c=bin/%.o}
+BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o}
 
 MAN_MAIN_SRC	=	src/so_long.c
 MAN_MAIN_BIN	=	${MAN_MAIN_SRC:src/%.c=bin/%.o}
