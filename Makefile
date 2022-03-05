@@ -1,6 +1,6 @@
 # Compiler options
 CC				=	gcc
-FLAGS			=	-Wall -Wextra -Werror
+FLAGS			=	-Wall -Wextra # -Werror
 COMPILE			=	$(CC) $(FLAGS)
 MANDATORY_EXE	=	so_long
 
