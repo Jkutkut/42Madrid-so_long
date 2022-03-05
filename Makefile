@@ -24,17 +24,21 @@ MAN_MAIN_BIN	=	${MAN_MAIN_SRC:%.c=bin/%.o}
 MANDATORY		=	$(BINS_MANDATORY) $(MAN_MAIN_BIN)
 # BONUS			=	$(BINS_BONUS) $(BONUS_MAIN_BIN)
 
-# Triggers
-all: $(MANDATORY_EXE)
+NAME			=	$(MANDATORY_EXE)
 
-bonus: $(BONUS_EXE)
+
+# Triggers
+# all: $(MANDATORY_EXE)
+all: $(NAME)
+
+# bonus: $(BONUS_EXE)
 
 # $(MANDATORY_EXE): $(MANDATORY)
 # 	$(info Compiling mandatory into $(MANDATORY_EXE))
 # 	$(COMPILE) -o $(MANDATORY_EXE) $^
 
 $(NAME): $(OBJ)
-	$(COMPILE) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
 
 # $(BONUS_EXE): $(BONUS)
 # 	$(info Compiling bonus into $(BONUS_EXE))
