@@ -1,7 +1,7 @@
 # Compiler options
 CC				=	gcc
 FLAGS			=	-Wall -Wextra -Werror
-COMPILE			=	@$(CC) $(FLAGS)
+COMPILE			=	$(CC) $(FLAGS)
 MANDATORY_EXE	=	so_long
 
 BUFFER_S		=	42
@@ -16,13 +16,15 @@ BUFFER_S		=	42
 # BINS_BONUS		=	${SRCS_BONUS:%.c=bin/%.o}
 
 MAN_MAIN_SRC	=	src/so_long.c
-MAN_MAIN_BIN	=	${MAN_MAIN_SRC:%.c=bin/%.o}
+MAN_MAIN_BIN	=	${MAN_MAIN_SRC:src/%.c=bin/%.o}
 
 # BONUS_MAIN_SRC	=	
 # BONUS_MAIN_BIN	=	${BONUS_MAIN_SRC:%.c=bin/%.o}
 
 MANDATORY		=	$(BINS_MANDATORY) $(MAN_MAIN_BIN)
 # BONUS			=	$(BINS_BONUS) $(BONUS_MAIN_BIN)
+
+MINILIBX		=	minilibx-linux/minilibx.a
 
 NAME			=	$(MANDATORY_EXE)
 
@@ -37,8 +39,12 @@ all: $(NAME)
 # 	$(info Compiling mandatory into $(MANDATORY_EXE))
 # 	$(COMPILE) -o $(MANDATORY_EXE) $^
 
-$(NAME): $(OBJ)
-	$(CC) $(OBJ) -Lmlx_linux -lmlx_Linux -L/usr/lib -Imlx_linux -lXext -lX11 -lm -lz -o $(NAME)
+$(NAME): $(MANDATORY) $(MINILIBX)
+	# $(CC) $(MANDATORY) -L"minilibx-linux" -L/usr/lib -I"minilibx-linux" -lXext -lX11 -lm -lz -o $(NAME)
+	# $(CC) $(MANDATORY) -L"minilibx-linux" -l"minilibx-linux" -L/usr/lib -I"minilibx-linux" -lXext -lX11 -lm -lz -o $(NAME)
+	# $(CC) $(MANDATORY) -L"minilibx-linux" -lXext -lX11 -lm -lz -o $(NAME)
+	# $(CC) $(MANDATORY) -L"minilibx-linux" -o $(NAME)
+	$(CC) $(OBJ) -L"minilibx-linux" -L/usr/lib -I"minilibx-linux" -lXext -lX11 -lm -lz -o $(NAME)
 
 # $(BONUS_EXE): $(BONUS)
 # 	$(info Compiling bonus into $(BONUS_EXE))
@@ -49,8 +55,13 @@ $(NAME): $(OBJ)
 # 	@mkdir -p $(dir $@)
 # 	$(COMPILE) -c $< -o $@
 
-bin/%.o: %.c
-	$(COMPILE) -I/usr/include -Imlx_linux -O3 -c $< -o $@
+bin/%.o: src/%.c
+	mkdir -p bin
+	$(COMPILE) -I/usr/include -I"minilibx-linux" -O3 -c $< -o $@
+
+
+$(MINILIBX):
+	make -C minilibx-linux
 
 # Clean logic
 .PHONY: re fclean clean
@@ -60,6 +71,7 @@ re: fclean all
 clean:
 	$(info Removing binary directory)
 	@rm -rf ./bin
+	make -C minilibx-linux clean
 
 fclean: clean
 	$(info Removing $(MANDATORY_EXE) $(BONUS_EXE))
