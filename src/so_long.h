@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/05 23:26:38 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/05 23:37:04 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,10 @@ typedef struct game
 	t_player	player;
 };
 
+
+// Funtions
+
+void	end(int endtype, char *msg);
 
 
 #endif
