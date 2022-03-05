@@ -3,8 +3,11 @@
 int	main(int argc, char	argv[])
 {
 	if (argc != 2)
-		return (0);
-	
+		end(1, "Invalid number of arguments");
+	// if (!valid_map(argv[1]))
+	// 	end(1, "Invalid map");
+
+	return (0);
 }
 
 
