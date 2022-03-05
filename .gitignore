@@ -5,7 +5,6 @@ a.out
 *.out
 so_long
 
-libft*
 run
 norminette_tester.sh
 
