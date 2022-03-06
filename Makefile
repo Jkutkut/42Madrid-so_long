@@ -12,9 +12,12 @@ LIBFT			=	src/libft/libft.a
 MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
 
 # Binaries variables
+MAP				=	ends_with.c \
+					check_map_filename.c \
+					load_map.c
 SRCS_MANDATORY	=	src/end.c \
 					src/valid_map.c \
-					src/get_next_line/get_next_line.c
+					src/get_next_line/get_next_line.c \
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o}
 

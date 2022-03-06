@@ -1,11 +1,11 @@
 #include "so_long.h"
 
-int	main(int argc, char	argv[])
+int	main(int argc, char	*argv[])
 {
+	
 	if (argc != 2)
 		end(1, "Invalid number of arguments");
-	// if (!valid_map(argv[1]))
-	// 	end(1, "Invalid map");
+	load_map(argv[1]);
 
 	return (0);
 }
