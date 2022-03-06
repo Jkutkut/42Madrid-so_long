@@ -4,6 +4,7 @@ bin
 a.out
 *.out
 so_long
+*.a
 
 run
 norminette_tester.sh

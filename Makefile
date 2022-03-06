@@ -6,10 +6,9 @@ MANDATORY_EXE	=	so_long
 
 # Libraries
 MINILIBX		=	mlx_linux
-LIBFT			=	"src/libft"
+LIBFT			=	src/libft/libft.a
 
 # Libraries flags
-LIBFT_FLAGS		=	-L$(LIBFT) -I$(LIBFT)
 MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
 
 # Binaries variables
@@ -30,7 +29,7 @@ NAME			=	$(MANDATORY_EXE)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
-	$(CC) $(MANDATORY) $(LIBFT_FLAGS) $(MINILIBX_FLAGS) -o $(NAME)
+	$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 
 bin/%.o: src/%.c
 	mkdir -p bin
@@ -40,7 +39,7 @@ $(MINILIBX):
 	@make -C $(MINILIBX)
 
 $(LIBFT):
-	@make -C $(LIBFT)
+	@make -C $(dir $(LIBFT))
 
 # Clean logic
 .PHONY: re fclean clean $(MINILIBX) $(LIBFT)
