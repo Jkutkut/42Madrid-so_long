@@ -39,7 +39,7 @@ $(MINILIBX):
 	@make -C $(MINILIBX)
 
 $(LIBFT):
-	@make -C $(dir $(LIBFT))
+	@make -C $(dir $(LIBFT)) BIN="../../bin/libft"
 
 # Clean logic
 .PHONY: re fclean clean $(MINILIBX) $(LIBFT)
@@ -50,7 +50,7 @@ clean:
 	$(info Removing binary directory)
 	@rm -rf ./bin
 	make -C $(MINILIBX) clean
-	make -C $(LIBFT) fclean
+	make -C $(dir $(LIBFT)) fclean BIN="../../bin/libft"
 
 fclean: clean
 	$(info Removing $(MANDATORY_EXE) $(BONUS_EXE))
