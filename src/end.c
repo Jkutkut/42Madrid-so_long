@@ -6,20 +6,22 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 23:31:18 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/06 00:01:17 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/06 10:16:24 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "so_long.h"
 
+/**
+ * @brief Ends the execution of the program
+ * 
+ * @param endtype Type of end (0: normal, 1: error)
+ * @param msg Message to display 
+ */
 void	end(int endtype, char *msg)
 {
 	if (endtype == 1)
-	{
 		ft_putstr_fd("Error: \n", 2);
-		ft_putstr_fd(msg, 2);
-	}
-	else
-		ft_putstr_fd(msg, 1);
-	exit(0);
+	ft_putstr_fd(msg, endtype + 1);
+	exit(endtype);
 }
