@@ -12,7 +12,9 @@ LIBFT			=	src/libft/libft.a
 MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
 
 # Binaries variables
-SRCS_MANDATORY	=	src/end.c
+SRCS_MANDATORY	=	src/end.c \
+					src/valid_map.c \
+					src/get_next_line/get_next_line.c
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o}
 
@@ -32,8 +34,8 @@ $(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
 	$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 
 bin/%.o: src/%.c
-	mkdir -p bin
-	$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 -I$(LIBFT) -c $< -o $@
+	mkdir -p $(dir $@)
+	$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 $(LIBFT) -c $< -o $@
 
 $(MINILIBX):
 	@make -C $(MINILIBX)
