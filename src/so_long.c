@@ -1,12 +1,18 @@
 #include "so_long.h"
 
+void	check_leaks(void)
+{
+	system("leaks -q so_long");
+}
+
 int	main(int argc, char	*argv[])
 {
 	
 	if (argc != 2)
 		end(1, "Invalid number of arguments");
-	load_map(argv[1]);
-
+	// atexit(check_leaks);
+	char	**map = load_map(argv[1]);
+	free(map);
 	return (0);
 }
 
