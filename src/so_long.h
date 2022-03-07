@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/07 12:47:25 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/07 15:07:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,29 +33,28 @@ typedef struct s_coord
 	int				y;
 }				t_coord;
 
-typedef struct s_rect
-{
-	t_coord			pos;
-	t_coord			size;
-}				t_rect;
-
 typedef struct s_player
 {
 	t_coord			pos;
+	// sprite
 }				t_player;
+
+typedef t_player t_stair;
+typedef t_player t_key;
 
 typedef struct s_game
 {
-	int		**map;
-	int		width;
-	int		height;
-	t_player	player;
+	char		*map;
+	t_coord		*size;
+	t_coord		*dim;
+	t_player	*player;
+	t_stair		**stairs;
+	t_key		**keys;
 }				t_game;
 
 
 // Funtions
 
-void	end(int endtype, char *msg);
 
 
 #endif
