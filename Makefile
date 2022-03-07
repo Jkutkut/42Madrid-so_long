@@ -1,8 +1,18 @@
 # Compiler options
 CC				=	gcc
-FLAGS			=	-Wall -Wextra -fsanitize=address # -Werror -fsanitize=address
+FLAGS			=	-Wall -Wextra #-fsanitize=address # -Werror -fsanitize=address
 COMPILE			=	$(CC) $(FLAGS)
 MANDATORY_EXE	=	so_long
+
+# Colors:
+NC				=	\033[0m
+RED				=	\033[0;31m
+GREEN			=	\033[0;32m
+LRED			=	\033[1;31m
+LGREEN			=	\033[1;32m
+YELLOW			=	\033[1;33m
+LBLUE			=	\033[1;34m
+TITLE			=	\033[38;5;33m
 
 # Libraries
 MINILIBX		=	mlx_linux
@@ -16,7 +26,7 @@ MAP				=	check_map_filename.c \
 					endswith.c \
 					load_map.c
 SRCS_MANDATORY	=	src/end.c \
-					src/get_next_line/get_next_line.c \
+					# src/get_next_line/get_next_line.c \
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} ${MAP:%.c=bin/map/%.o}
 
@@ -33,14 +43,21 @@ NAME			=	$(MANDATORY_EXE)
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
-	$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
+	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@echo " ${GREEN}[OK]${NC}\n"
 
 bin/%.o: src/%.c
-	mkdir -p $(dir $@)
-	$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 $(LIBFT) -c $< -o $@
+	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
+	@mkdir -p $(dir $@)
+	@#$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 $(LIBFT) -c $< -o $@
+	@$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 -c $< -o $@
+	@echo " ${GREEN}[OK]${NC}"
 
 $(MINILIBX):
-	@make -C $(MINILIBX)
+	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
+	@make -s -C $(MINILIBX)
+	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
 
 $(LIBFT):
 	@make -C $(dir $(LIBFT)) BIN="../../bin/libft"
