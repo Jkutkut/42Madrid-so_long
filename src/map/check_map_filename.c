@@ -6,11 +6,13 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:07:11 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/06 12:15:28 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/07 10:11:54 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
+
+void	end(int endtype, char *msg);
 
 /**
  * @brief Checks if the given mapfile has a correct name. If incorrect, ends 
