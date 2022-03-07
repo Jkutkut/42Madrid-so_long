@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/07 11:38:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/07 11:56:23 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,7 @@
 #include "libft/libft.h"
 #include "get_next_line/get_next_line.h"
 #include "map/map.h"
+#include "tools/tools.h"
 
 #define WIDTH 720
 #define HEIGHT 480

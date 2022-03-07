@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/07 11:52:35 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/07 12:04:09 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ int	main(int argc, char	*argv[])
 		end(1, "Invalid number of arguments");
 	// atexit(check_leaks);
 	char	**map = load_map(argv[1]);
-	free(map);
+	if (map != NULL)
+		freearray(map);
 	return (0);
 }
 
