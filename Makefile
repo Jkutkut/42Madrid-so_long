@@ -25,10 +25,11 @@ MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11
 MAP				=	check_map_filename.c \
 					endswith.c \
 					load_map.c
-SRCS_MANDATORY	=	src/end.c \
-					# src/get_next_line/get_next_line.c \
 
-BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} ${MAP:%.c=bin/map/%.o}
+TOOLS			=	end.c \
+					freearray.c
+
+BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} ${MAP:%.c=bin/map/%.o} ${TOOLS:%.c=bin/tools/%.o}
 
 MAN_MAIN_SRC	=	src/so_long.c
 MAN_MAIN_BIN	=	${MAN_MAIN_SRC:src/%.c=bin/%.o}
