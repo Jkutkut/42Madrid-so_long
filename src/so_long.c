@@ -1,9 +1,21 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   so_long.c                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/07 11:52:35 by jre-gonz         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "so_long.h"
 
-void	check_leaks(void)
-{
-	system("leaks -q so_long");
-}
+// void	check_leaks(void)
+// {
+// 	system("leaks -q so_long");
+// }
 
 int	main(int argc, char	*argv[])
 {
