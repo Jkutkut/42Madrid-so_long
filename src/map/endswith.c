@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 11:58:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/06 12:03:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/07 10:27:38 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,6 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
  */
 int	endswith(char *str, char *end)
 {
-	int	index;
 	int	str_len;
 	int	end_len;
 
