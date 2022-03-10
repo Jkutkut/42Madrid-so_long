@@ -1,29 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   map.h                                              :+:      :+:    :+:   */
+/*   create_map.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/10 13:56:09 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/10 13:52:33 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/10 13:52:50 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_H
-# define MAP_H
+#include "map.h"
 
-#include "../so_long.h"
-#include <fcntl.h>
+t_map	*create_map(char **m)
+{
+	t_map	*map;
 
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1024
-#endif
-
-void	check_map_filename(char *filename);
-void	check_update_map(t_map *m);
-t_map	*create_map(char **m);
-int		endswith(char *str, char *end);
-char	**load_map(char *filename);
-
-#endif
+	if (!m)
+		end(1, "Error: map is null");
+	if (!(map = (t_map *) malloc(sizeof(t_map))))
+		end(1, "Error: malloc failed");
+	map->map = m;
+	map->width = 0;
+	map->height = 0;
+	return (map);
+}

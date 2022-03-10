@@ -23,6 +23,8 @@ MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11
 
 # Binaries variables
 MAP				=	check_map_filename.c \
+					create_update_map.c \
+					create_map.c \
 					endswith.c \
 					load_map.c
 
