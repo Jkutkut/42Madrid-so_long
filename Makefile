@@ -14,16 +14,27 @@ YELLOW			=	\033[1;33m
 LBLUE			=	\033[1;34m
 TITLE			=	\033[38;5;33m
 
+OS			=	$(shell uname -s)
 # Libraries
-MINILIBX		=	mlx_linux
+ifeq ($(OS), Darwin)
+	MINILIBX	=	mlx_mac
+else
+	MINILIBX	=	mlx_linux
+endif
+
 LIBFT			=	src/libft/libft.a
 
 # Libraries flags
-MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
+ifeq ($(OS), Darwin)
+	# MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
+	MINILIBX_FLAGS	=	-lmlx_mac -framework OpenGL -framework AppKit
+else
+	MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
+endif
 
 # Binaries variables
 MAP				=	check_map_filename.c \
-					create_update_map.c \
+					check_update_map.c \
 					create_map.c \
 					endswith.c \
 					load_map.c
@@ -48,14 +59,15 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
-	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@#$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@$(CC) $(MANDATORY) $(LIBFT)  -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
 	@mkdir -p $(dir $@)
-	@#$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 $(LIBFT) -c $< -o $@
-	@$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 -c $< -o $@
+	@#$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 -c $< -o $@
+	@$(COMPILE) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
 $(MINILIBX):

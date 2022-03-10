@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/10 13:19:35 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/10 16:37:27 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 # define SO_LONG_H
 
 // C libraries
-#include "../mlx_linux/mlx.h"
-#include "../mlx_linux/mlx_int.h"
+// #include "../mlx_linux/mlx.h"
+// #include "../mlx_linux/mlx_int.h"
+
 #include <stdio.h>
 #include <stdlib.h>
 
@@ -27,12 +28,6 @@
 #define WIDTH 720
 #define HEIGHT 480
 
-typedef struct s_coord
-{
-	int				x;
-	int				y;
-}				t_coord;
-
 typedef struct s_player
 {
 	t_coord			pos;
@@ -41,13 +36,6 @@ typedef struct s_player
 
 typedef t_player t_stair;
 typedef t_player t_key;
-
-typedef struct s_map
-{
-	char			**map;
-	int				width;
-	int				height;
-}  				t_map;
 
 
 // typedef struct s_game
