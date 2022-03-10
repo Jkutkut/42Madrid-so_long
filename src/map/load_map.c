@@ -6,20 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:28:29 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/10 11:05:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/10 11:12:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
-
-void	ft_strextend(char **s1, char *s2)
-{
-	char	*tmp;
-
-	tmp = *s1;
-	*s1 = ft_strjoin(*s1, s2);
-	free(tmp);
-}
 
 char	**load_map(char *filename)
 {
