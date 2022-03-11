@@ -59,8 +59,8 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
-	@#$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
-	@$(CC) $(MANDATORY) $(LIBFT)  -o $(NAME)
+	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@#$(CC) $(MANDATORY) $(LIBFT)  -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bin/%.o: src/%.c
