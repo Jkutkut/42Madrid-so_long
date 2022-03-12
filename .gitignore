@@ -1,10 +1,9 @@
 .vscode
-bin
+*.pdf
 
-a.out
+bin
 *.out
 *.o
-so_long
 *.a
 
 run
@@ -19,3 +18,5 @@ printfTest*
 *.swiftmodule
 *.swiftdoc
 *.dylib
+
+so_long
