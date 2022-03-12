@@ -19,7 +19,8 @@ OS			=	$(shell uname -s)
 ifeq ($(OS), Darwin)
 	MINILIBX	=	mlx_mac
 else
-	MINILIBX	=	mlx_linux
+	# MINILIBX	=	mlx_linux
+	MINILIBX	=	mlx
 endif
 
 LIBFT			=	src/libft/libft.a
@@ -29,7 +30,9 @@ ifeq ($(OS), Darwin)
 	# MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
 	MINILIBX_FLAGS	=	-lmlx_mac -framework OpenGL -framework AppKit
 else
-	MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
+	# MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
+	# MINILIBX_FLAGS	=	-lmlx -lXext -lX11 -lm -lz
+	MINILIBX_FLAGS		=	$(MINILIBX)/libmlx.a -lXext -lX11
 endif
 
 # Binaries variables
@@ -79,7 +82,7 @@ bin/%.o: src/%.c
 
 $(MINILIBX):
 	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
-	@make -s -C $(MINILIBX)
+	@make -C $(MINILIBX)
 	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
 
 $(LIBFT):

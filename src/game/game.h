@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:45:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 17:52:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ typedef struct s_game
 	t_player	*player;
 	t_stair		**stairs;
 	t_key		**keys;
+	void		*mlx;
+	void		*win;
 }				t_game;
 
 t_game	*create_game(t_map *map);
