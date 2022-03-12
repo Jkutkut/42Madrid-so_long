@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/11 08:22:39 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:25:32 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,18 +38,16 @@ typedef t_player t_stair;
 typedef t_player t_key;
 
 
-// typedef struct s_game
-// {
-// 	char		*map;
-// 	t_coord		*size;
-// 	t_coord		*dim;
-// 	t_player	*player;
-// 	t_stair		**stairs;
-// 	t_key		**keys;
-// }				t_game;
+typedef struct s_game
+{
+	t_map		*map;
+	t_player	*player;
+	t_stair		**stairs;
+	t_key		**keys;
+}				t_game;
 
 
-// Funtions
+// Functions
 
 
 
