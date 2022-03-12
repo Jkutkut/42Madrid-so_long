@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 22:27:43 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 22:31:50 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ int	main(int argc, char	*argv[])
 	game->win = mlx_new_window(game->mlx, WIDTH, HEIGHT, "so_long");
 	
 	int w, h;
-	void	*image = mlx_xpm_file_to_image(game->mlx, "./res/cat.xpm", &w, &h);
+	void	*image = mlx_xpm_file_to_image(game->mlx, "./res/env.xpm", &w, &h);
 	if (image != NULL)
 		mlx_put_image_to_window(game->mlx, game->win, image, 0, 0);
 	else
