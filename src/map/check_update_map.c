@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:00:45 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:15:59 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ static int	map_contains(t_map *m, char c)
 
 	i = 0;
 	j = 0;
-	printf("Checking %c\n", c);
 	while (m->map[i])
 	{
 		j = 0;
@@ -45,7 +44,6 @@ void	check_update_map(t_map *m)
 	while (m->map[i])
 	{
 		line_len = ft_strlen(m->map[i]);
-		printf("%s\n", m->map[i]);
 		if (line_len != m->width)
 			end(1, "Invalid map:\n Map width is not constant.");
 		if (m->map[i][0] != '1' || m->map[i][line_len - 1] != '1')

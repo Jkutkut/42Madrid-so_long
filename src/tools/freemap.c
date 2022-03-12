@@ -1,27 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   freemap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:21:43 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 13:08:45 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/12 13:19:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "tools.h"
 
-#ifndef MAP_H
-#include "../map/map.h"
-#endif
+void	freemap(t_map *m)
+{
+	int		i;
 
-#include <stdlib.h>
-
-void	end(int endtype, char *msg);
-void	freearray(char **array);
-void	freemap(t_map *m);
-void	ft_strextend(char **s1, char *s2);
-
-#endif
+	i = 0;
+	while (m->map[i])
+		free(m->map[i++]);
+	free(m->map);
+}

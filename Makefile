@@ -41,6 +41,7 @@ MAP				=	check_map_filename.c \
 
 TOOLS			=	end.c \
 					freearray.c \
+					freemap.c \
 					ft_strextend.c
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} ${MAP:%.c=bin/map/%.o} ${TOOLS:%.c=bin/tools/%.o}
