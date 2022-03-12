@@ -6,20 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/11 08:31:28 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:20:26 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef MAP_H
 # define MAP_H
-
-#include "../libft/libft.h"
-#include "../tools/tools.h"
-#include <fcntl.h>
-
-#ifndef BUFFER_SIZE
-# define BUFFER_SIZE 1024
-#endif
 
 typedef struct s_coord
 {
@@ -33,6 +25,14 @@ typedef struct s_map
 	int				width;
 	int				height;
 }  				t_map;
+
+#include "../libft/libft.h"
+#include "../tools/tools.h"
+#include <fcntl.h>
+
+#ifndef BUFFER_SIZE
+# define BUFFER_SIZE 1024
+#endif
 
 void	check_map_filename(char *filename);
 void	check_update_map(t_map *m);

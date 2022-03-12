@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freearray.c                                        :+:      :+:    :+:   */
+/*   create_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:54:46 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:33:35 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/12 13:44:44 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "tools.h"
+#include "game.h"
 
-void	freearray(char **array)
+t_game	*create_game(t_map *map)
 {
-	int		i;
+	t_game	*game;
 
-	if (!array)
-		return ;
-	i = 0;
-	while (array[i])
-		free(array[i++]);
-	free(array);
+	if (!(game = (t_game *)malloc(sizeof(t_game))))
+		return (NULL);
+	game->map = map;
+	game->player = NULL;
+	game->stairs = NULL;
+	game->keys = NULL;
+	return (game);
 }

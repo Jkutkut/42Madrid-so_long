@@ -33,6 +33,8 @@ else
 endif
 
 # Binaries variables
+GAME			=	create_game.c
+
 MAP				=	check_map_filename.c \
 					check_update_map.c \
 					create_map.c \
@@ -41,9 +43,13 @@ MAP				=	check_map_filename.c \
 
 TOOLS			=	end.c \
 					freearray.c \
+					freemap.c \
 					ft_strextend.c
 
-BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} ${MAP:%.c=bin/map/%.o} ${TOOLS:%.c=bin/tools/%.o}
+BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
+					${GAME:%.c=bin/game/%.o} \
+					${MAP:%.c=bin/map/%.o} \
+					${TOOLS:%.c=bin/tools/%.o}
 
 MAN_MAIN_SRC	=	src/so_long.c
 MAN_MAIN_BIN	=	${MAN_MAIN_SRC:src/%.c=bin/%.o}

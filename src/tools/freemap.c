@@ -1,25 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freearray.c                                        :+:      :+:    :+:   */
+/*   freemap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:54:46 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:33:35 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 13:08:45 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/12 13:32:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-void	freearray(char **array)
+void	freemap(t_map *m)
 {
-	int		i;
+	int	i;
 
-	if (!array)
-		return ;
 	i = 0;
-	while (array[i])
-		free(array[i++]);
-	free(array);
+	if (!m)
+		return ;
+	if (m->map)
+	{
+		while (i < m->height)
+		{
+			free(m->map[i]);
+			i++;
+		}
+		free(m->map);
+	}
+	free(m);
 }
