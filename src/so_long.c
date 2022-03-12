@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/11 09:26:45 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/11 12:24:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,14 +72,15 @@ int	main(void)
 		for (int j = 0; j < HEIGHT / 2; j++)
 			my_mlx_pixel_put(&img, i, j, 0x00FF0000);
 	mlx_put_image_to_window(mlx, mlx_win, img.img, 0, 0);
+	mlx_put_image_to_window(mlx, mlx_win, img.img, WIDTH / 2, 0);
 
 	int w, h;
-	void	*image = mlx_xpm_file_to_image(mlx_win, "res/Cat Sprite Sheet.png", &w, &h);
-	if (image != NULL)
-		mlx_put_image_to_window(mlx, mlx_win, image, 0, 0);
-	else
-		printf("Error: Could not load image\n");
-	printf("%d %d\n", w, h);
+	// void	*image = mlx_png_file_to_image(mlx_win, "res/cat.png", &w, &h);
+	// if (image != NULL)
+	// 	mlx_put_image_to_window(mlx, mlx_win, image, 0, 0);
+	// else
+	// 	printf("Error: Could not load image\n");
+	// printf("%d %d\n", w, h);
 
 	mlx_loop(mlx);
 }

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/11 08:22:39 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/11 12:12:08 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // C libraries
 #include "../mlx_linux/mlx.h"
-#include "../mlx_linux/mlx_int.h"
+// #include "../mlx_linux/mlx_int.h"
 
 #include <stdio.h>
 #include <stdlib.h>
