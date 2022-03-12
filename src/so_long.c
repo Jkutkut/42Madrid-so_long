@@ -25,6 +25,8 @@ int	main(int argc, char	*argv[])
 	// atexit(check_leaks);
 	t_map *map = create_map(load_map(argv[1]));
 	check_update_map(map);
+	print_map(map);
+	
 	t_game *game = create_game(map);
 	
 	int i = 0;

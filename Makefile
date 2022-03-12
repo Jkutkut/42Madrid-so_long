@@ -44,7 +44,8 @@ MAP				=	check_map_filename.c \
 TOOLS			=	end.c \
 					freearray.c \
 					freemap.c \
-					ft_strextend.c
+					ft_strextend.c \
+					print_map.c
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 					${GAME:%.c=bin/game/%.o} \

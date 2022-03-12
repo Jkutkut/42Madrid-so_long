@@ -1,27 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 19:07:13 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 18:35:23 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/12 19:12:51 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#include "tools.h"
 
-#include "../map/map.h"
-#include "../libft/libft.h"
+void	print_map(t_map *m)
+{
+	int	i;
+	int	j;
 
-#include <stdlib.h>
-
-void	end(int endtype, char *msg);
-void	freearray(char **array);
-void	freemap(t_map *m);
-void	ft_strextend(char **s1, char *s2);
-void	print_map(t_map *m);
-
-#endif
+	i = 0;
+	while (i < m->height)
+	{
+		j = 0;
+		while (j < m->width)
+		{
+			if (m->map[i][j] == '0')
+				ft_putchar_fd(' ', 1);
+			else if (m->map[i][j] == '1')
+				ft_putchar_fd('#', 1);
+			else if (m->map[i][j] == 'C')
+				ft_putchar_fd('.', 1);
+			else
+				ft_putchar_fd(m->map[i][j], 1);
+			j++;
+		}
+		ft_putchar_fd('\n', 1);
+		i++;
+	}
+}
