@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:15:59 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 18:49:33 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ void	check_update_map(t_map *m)
 			end(1, "Invalid map:\n The map must be surronded by 1s.");
 		i++;
 	}
+	m->height = i;
 	while (--line_len)
 		if (m->map[0][line_len] != '1' || m->map[i - 1][line_len] != '1')
 			end(1, "Invalid map:\n The map must be surronded by 1s.");
