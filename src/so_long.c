@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:26:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/12 13:40:40 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ int	main(int argc, char	*argv[])
 	// atexit(check_leaks);
 	t_map *map = create_map(load_map(argv[1]));
 	check_update_map(map);
+	t_game *game = create_game(map);
 	
 	int i = 0;
 	while (map->map[i])

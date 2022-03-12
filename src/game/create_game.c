@@ -1,34 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.h                                          :+:      :+:    :+:   */
+/*   create_game.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:40:33 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/12 13:44:44 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_H
-# define SO_LONG_H
+#include "game.h"
 
-// C libraries
-#include "../mlx_linux/mlx.h"
-#include "../mlx_linux/mlx_int.h"
+t_game	*create_game(t_map *map)
+{
+	t_game	*game;
 
-#include <stdio.h>
-#include <stdlib.h>
-
-// Custom libraries
-#include "libft/libft.h"
-#include "map/map.h"
-#include "game/game.h"
-#include "tools/tools.h"
-
-
-// Functions
-
-
-
-#endif
+	if (!(game = (t_game *)malloc(sizeof(t_game))))
+		return (NULL);
+	game->map = map;
+	game->player = NULL;
+	game->stairs = NULL;
+	game->keys = NULL;
+	return (game);
+}
