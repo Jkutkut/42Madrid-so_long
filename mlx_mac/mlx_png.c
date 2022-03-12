@@ -389,6 +389,7 @@ void	*mlx_int_parse_png(void *xvar, unsigned char *fptr, int size, int *width, i
   if (!(img = mlx_new_image(xvar, pi.width, pi.height)))
     {
       warnx("mlx PNG error : Can't create mlx image");
+      printf("%d %d\n", pi.width, pi.height);
       return ((void *)0);
     }
   *width = pi.width;
