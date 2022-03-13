@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 13:23:39 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:55:21 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,20 +29,20 @@ int	main(int argc, char	*argv[])
 	
 	t_game *game = create_game(map);
 	
-	int i = -1;
-	while (++i < P_ANI)
-		mlx_put_image_to_window(game->mlx, game->win, game->imgplayer[i], 64 * i, 0);
-	i = -1;
-	while (++i < E_ANI)
-		mlx_put_image_to_window(game->mlx, game->win, game->imgenemy[i], 64 * i, 64);
-	mlx_put_image_to_window(game->mlx, game->win, game->imgcoin, 0, 64 * 2);
-	mlx_put_image_to_window(game->mlx, game->win, game->imgexit[0], 64, 64 * 2);
-	mlx_put_image_to_window(game->mlx, game->win, game->imgexit[1], 64 * 2, 64 * 2);
+	// int i = -1;
+	// while (++i < P_ANI)
+	// 	mlx_put_image_to_window(game->mlx, game->win, game->imgplayer[i], 64 * i, 0);
+	// i = -1;
+	// while (++i < E_ANI)
+	// 	mlx_put_image_to_window(game->mlx, game->win, game->imgenemy[i], 64 * i, 64);
+	// mlx_put_image_to_window(game->mlx, game->win, game->imgcoin, 0, 64 * 2);
+	// mlx_put_image_to_window(game->mlx, game->win, game->imgexit[0], 64, 64 * 2);
+	// mlx_put_image_to_window(game->mlx, game->win, game->imgexit[1], 64 * 2, 64 * 2);
 
-	i = -1;
-	while (++i < ENV_SRCS)
-		mlx_put_image_to_window(game->mlx, game->win, game->imgenv[i],
-			64 * (i % 5), 64 * (3 + i / 5));
+	// i = -1;
+	// while (++i < ENV_SRCS)
+	// 	mlx_put_image_to_window(game->mlx, game->win, game->imgenv[i],
+	// 		64 * (i % 5), 64 * (3 + i / 5));
 
 	mlx_loop(game->mlx);
 	

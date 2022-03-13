@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 13:49:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:52:29 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,5 +99,6 @@ typedef struct s_game
 
 t_game	*create_game(t_map *map);
 void	load_imgs(t_game *game);
+void	load_level(t_game *game);
 
 #endif
