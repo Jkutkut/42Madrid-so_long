@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 16:13:48 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:26:46 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,13 +14,19 @@
 
 #define REQUIRED_ELEMENTS "CEP"
 
+/**
+ * @brief If the given map contains the given char.
+ * 
+ * @param m Map to check
+ * @param c Char to search
+ * @return int 0 if not found, 1 if found
+ */
 static int	map_contains(t_map *m, char c)
 {
 	int	i;
 	int	j;
 
 	i = 0;
-	j = 0;
 	while (m->map[i])
 	{
 		j = 0;
@@ -32,6 +38,14 @@ static int	map_contains(t_map *m, char c)
 	return (0);
 }
 
+/**
+ * @brief Verify if the given line is valid.
+ * This is done by checking if the only chararcters used are required ones,
+ * 0 or 1.
+ * Ends the program if the line is invalid.
+ * 
+ * @param line Line to check.
+ */
 static void	check_valid_line(char *line)
 {
 	int	i;
@@ -46,6 +60,37 @@ static void	check_valid_line(char *line)
 	}
 }
 
+/**
+ * @brief Check if there's only one player on the map.
+ * If the map is not valid, ends the program.
+ * 
+ * @param m Map to check
+ */
+static void	check_unique_player(t_map *m)
+{
+	int	i;
+	int	j;
+	int	player_count;
+
+	i = 0;
+	player_count = 0;
+	while (m->map[i])
+	{
+		j = 0;
+		while (m->map[i][j])
+			if (m->map[i][j++] == 'P')
+				if (++player_count > 1)
+					end(1, "Too many players.");
+		i++;
+	}
+}
+
+/**
+ * @brief Checks if the given map is valid.
+ * Also updates the with and height of the map.
+ * 
+ * @param m Map to verify and update.
+ */
 void	check_update_map(t_map *m)
 {
 	int	i;
@@ -72,4 +117,5 @@ void	check_update_map(t_map *m)
 	while (REQUIRED_ELEMENTS[line_len])
 		if (!map_contains(m, REQUIRED_ELEMENTS[line_len++]))
 			end(1, "Invalid map:\n The map must contain CEP");
+	check_unique_player(m);
 }
