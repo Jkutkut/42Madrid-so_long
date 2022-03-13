@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 13:52:29 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 15:05:31 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@
 #endif
 
 #ifndef EXIT_OPEN_SRC
-#define EXIT_OPEN_SRC "./res/env/E/stairs02.xpm"
+#define EXIT_OPEN_SRC "./res/env/E/stairs01.xpm"
 #endif
 
 #define EXIT_O 0

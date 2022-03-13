@@ -1,7 +1,7 @@
 /* XPM */
-static char * cat_xpm[] = {
+static char * cat01_xpm[] = {
 "64 64 4 1",
-" 	c None",
+" 	c #3D253B",
 ".	c #2F2F2E",
 "+	c #B5B5B5",
 "@	c #E0E0E0",

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 13:46:48 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 15:07:08 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,11 @@ static t_img	*load_xpm(t_game *game, char *path)
 
 	img = mlx_xpm_file_to_image(game->mlx, path, &i, &i);
 	if (img == NULL)
+	{
+		ft_putstr_fd("Error loading image: ", 2);
+		ft_putendl_fd(path, 2);
 		end(1, "Error loading image");
+	}
 	return (img);
 }
 

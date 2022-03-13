@@ -1,7 +1,7 @@
 /* XPM */
 static char * stairs01_xpm[] = {
 "64 64 7 1",
-" 	c None",
+" 	c #3D253B",
 ".	c #BF704D",
 "+	c #895A45",
 "@	c #25131A",
