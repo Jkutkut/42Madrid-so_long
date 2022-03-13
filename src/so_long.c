@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 22:31:50 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 01:05:45 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,10 @@ int	main(int argc, char	*argv[])
 	print_map(map);
 	
 	t_game *game = create_game(map);
-	game->mlx = mlx_init();
-	game->win = mlx_new_window(game->mlx, WIDTH, HEIGHT, "so_long");
 	
-	int w, h;
-	void	*image = mlx_xpm_file_to_image(game->mlx, "./res/env.xpm", &w, &h);
-	if (image != NULL)
-		mlx_put_image_to_window(game->mlx, game->win, image, 0, 0);
-	else
-		printf("Error: Could not load image\n");
+	int i = -1;
+	while (++i < 8)
+		mlx_put_image_to_window(game->mlx, game->win, game->imgplayer[i], 64 * i, 0);
 
 	mlx_loop(game->mlx);
 	
