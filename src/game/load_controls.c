@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:09:48 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 16:48:54 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 17:04:26 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,9 @@ int	key_press(int keycode, t_game *game)
 
 int	destroy(int keycode, t_game *game)
 {
+	(void)keycode;
 	printf("Destroy\n");
+	return (1);
 }
 
 void	load_controls(t_game *game)

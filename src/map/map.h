@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:20:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 16:59:04 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,7 @@ typedef struct s_map
 #include "../libft/libft.h"
 #include "../tools/tools.h"
 #include <fcntl.h>
+#include <unistd.h>
 
 #ifndef BUFFER_SIZE
 # define BUFFER_SIZE 1024
