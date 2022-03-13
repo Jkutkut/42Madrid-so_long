@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 13:46:55 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 13:49:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,8 @@
 #ifndef HEIGHT
 # define HEIGHT 480
 #endif
+
+// Sprites
 
 #define P_ANI 8
 #define E_ANI 4
@@ -64,9 +66,13 @@
 #define ENV_C_BR_SRC "./res/env/1/wall_corner_bot_right.xpm"
 #define ENV_WALL_SRC "./res/env/1/wall.xpm"
 
+// Dependencies
+
 #include "../../mlx/mlx.h"
 #include "../../mlx/mlx_int.h"
 #include "../map/map.h"
+
+// Structures
 
 typedef struct s_player
 {
@@ -88,6 +94,8 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 }				t_game;
+
+// Functions
 
 t_game	*create_game(t_map *map);
 void	load_imgs(t_game *game);
