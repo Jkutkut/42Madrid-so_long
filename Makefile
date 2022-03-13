@@ -36,7 +36,8 @@ else
 endif
 
 # Binaries variables
-GAME			=	create_game.c
+GAME			=	create_game.c \
+					load_imgs.c
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
