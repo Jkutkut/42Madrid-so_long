@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 01:05:45 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 01:17:15 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,6 +32,9 @@ int	main(int argc, char	*argv[])
 	int i = -1;
 	while (++i < 8)
 		mlx_put_image_to_window(game->mlx, game->win, game->imgplayer[i], 64 * i, 0);
+	i = -1;
+	while (++i < 4)
+		mlx_put_image_to_window(game->mlx, game->win, game->imgenemy[i], 64 * i, 64);
 
 	mlx_loop(game->mlx);
 	
