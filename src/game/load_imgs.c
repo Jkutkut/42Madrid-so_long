@@ -6,12 +6,19 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 15:07:08 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:53:27 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
+/**
+ * @brief Load the given image into the game.
+ * 
+ * @param game Game to load the image into.
+ * @param path Path of the img file.
+ * @return t_img* Object containing the image.
+ */
 static t_img	*load_xpm(t_game *game, char *path)
 {
 	int		i;
@@ -27,6 +34,11 @@ static t_img	*load_xpm(t_game *game, char *path)
 	return (img);
 }
 
+/**
+ * @brief Load all player and enemy sprites.
+ * 
+ * @param game Game to load the images into.
+ */
 static void	load_players(t_game *game)
 {
 	char	*path;
@@ -35,7 +47,7 @@ static void	load_players(t_game *game)
 	path = ft_strdup("./res/cat/cat00.xpm");
 	game->imgplayer = malloc(sizeof(t_player *) * (P_ANI));
 	if (game->imgplayer == NULL)
-		end(2, "Error: malloc failed");
+		end(1, "Error: malloc failed");
 	i = 0;
 	while (++i <= P_ANI)
 	{
@@ -46,7 +58,7 @@ static void	load_players(t_game *game)
 	path = ft_strdup("./res/enemy/enemy00.xpm");
 	game->imgenemy = malloc(sizeof(t_player *) * (E_ANI));
 	if (game->imgenemy == NULL)
-		end(2, "Error: malloc failed");
+		end(1, "Error: malloc failed");
 	i = 0;
 	while (++i <= E_ANI)
 	{
@@ -56,20 +68,31 @@ static void	load_players(t_game *game)
 	free(path);
 }
 
+/**
+ * @brief Load the sprites representing the exit.
+ * 
+ * @param game
+ */
 static void	load_exit(t_game *game)
 {
 	game->imgexit = malloc(sizeof(t_img *) * (2));
 	if (game->imgexit == NULL)
-		end(2, "Error: malloc failed");
+		end(1, "Error: malloc failed");
 	game->imgexit[EXIT_O] = load_xpm(game, EXIT_OPEN_SRC);
 	game->imgexit[EXIT_C] = load_xpm(game, EXIT_CLOSED_SRC);
 }
 
+/**
+ * @brief Load all sprites related to enviroment.
+ * This is elements like walls and floors.
+ * 
+ * @param game 
+ */
 static void	load_env(t_game *game)
 {
 	game->imgenv = malloc(sizeof(t_player *) * (ENV_SRCS));
 	if (game->imgenv == NULL)
-		end(2, "Error: malloc failed");
+		end(1, "Error: malloc failed");
 	game->imgenv[ENV_FLOOR] = load_xpm(game, ENV_FLOOR_SRC);
 	game->imgenv[ENV_L_T] = load_xpm(game, ENV_L_T_SRC);
 	game->imgenv[ENV_L_L] = load_xpm(game, ENV_L_L_SRC);
@@ -82,6 +105,11 @@ static void	load_env(t_game *game)
 	game->imgenv[ENV_WALL] = load_xpm(game, ENV_WALL_SRC);
 }
 
+/**
+ * @brief Load all the required images into the game.
+ * 
+ * @param game Game to load the images into.
+ */
 void	load_imgs(t_game *game)
 {
 	printf("Loading player and enemies\n");

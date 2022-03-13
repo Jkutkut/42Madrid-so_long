@@ -6,17 +6,31 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:50:38 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 15:19:45 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 20:43:30 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
+/**
+ * @brief Show the given img on the given game.
+ * Place it on the img index (x, y)
+ * 
+ * @param img Image to show
+ * @param x Index on the horizontal axis.
+ * @param y Index on the vertical axis.
+ * @param game Game to show the img on.
+ */
 void	showimg(t_img *img, int x, int y, t_game *game)
 {
 	mlx_put_image_to_window(game->mlx, game->win, img, x * 64, y * 64);
 }
 
+/**
+ * @brief Show on screen the border of the given game.
+ * 
+ * @param game 
+ */
 void	show_border(t_game *game)
 {
 	int	i;
@@ -41,9 +55,15 @@ void	show_border(t_game *game)
 	showimg(game->imgenv[ENV_C_TL], 0, 0, game);
 	showimg(game->imgenv[ENV_C_TR], game->map->width - 1, 0, game);
 	showimg(game->imgenv[ENV_C_BL], 0, game->map->height - 1, game);
-	showimg(game->imgenv[ENV_C_BR], game->map->width - 1, game->map->height - 1, game);
+	showimg(game->imgenv[ENV_C_BR], game->map->width - 1,
+		game->map->height - 1, game);
 }
 
+/**
+ * @brief Show on screen the given game.
+ * 
+ * @param game 
+ */
 void	load_level(t_game *game)
 {
 	int	i;
@@ -66,7 +86,6 @@ void	load_level(t_game *game)
 				showimg(game->imgcoin, j, i, game);
 			else if (game->map->map[i][j] == 'P')
 				showimg(game->imgplayer[0], j, i, game);
-			
 			j++;
 		}
 		i++;
