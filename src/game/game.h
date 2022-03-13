@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 17:04:51 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 17:53:31 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,6 +94,8 @@ typedef struct s_game
 	void		*mlx;
 	void		*win;
 }				t_game;
+
+#include "../tools/tools.h"
 
 // Functions
 

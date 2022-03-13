@@ -49,6 +49,7 @@ MAP				=	check_map_filename.c \
 
 TOOLS			=	end.c \
 					freearray.c \
+					freeend.c \
 					freemap.c \
 					ft_strextend.c \
 					print_map.c

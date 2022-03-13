@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 16:09:48 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 17:04:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 17:40:07 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@
 int	key_press(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
-		printf("ESQ\n");
+		freeend(1, "Thanks for playing UwU.", game);
 	else if (keycode == KEY_W || keycode == KEY_UP)
 		printf("UP\n");
 	else if (keycode == KEY_A || keycode == KEY_LEFT)
@@ -59,7 +59,7 @@ int	key_press(int keycode, t_game *game)
 int	destroy(int keycode, t_game *game)
 {
 	(void)keycode;
-	printf("Destroy\n");
+	freeend(1, "Thanks for playing UwU.", game);
 	return (1);
 }
 
