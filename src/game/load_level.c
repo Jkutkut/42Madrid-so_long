@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:50:38 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 15:10:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/13 15:19:45 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ void	show_border(t_game *game)
 	i = 1;
 	while (i < game->map->width - 1)
 	{
-		showimg(game->imgenv[ENV_L_T], i, 0, game);
+		if (game->map->map[1][i] == '1')
+			showimg(game->imgenv[ENV_WALL], i, 0, game);
+		else
+			showimg(game->imgenv[ENV_L_T], i, 0, game);
 		showimg(game->imgenv[ENV_L_B], i, game->map->height - 1, game);
 		i++;
 	}
