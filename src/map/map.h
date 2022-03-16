@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 20:16:20 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/16 22:21:12 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ void	check_map_filename(char *filename);
 void	check_update_map(t_map *m);
 t_map	*create_map(char **m);
 int		endswith(char *str, char *end);
+int		getcoins(t_map *map);
 char	**load_map(char *filename);
 
 #endif

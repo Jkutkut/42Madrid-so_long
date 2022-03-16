@@ -1,36 +1,41 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long.c                                          :+:      :+:    :+:   */
+/*   getcoins.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/16 22:05:07 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/16 22:16:30 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/16 22:20:48 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "map.h"
 
-// void	check_leaks(void)
-// {
-// 	system("leaks -q so_long");
-// }
-
-int	main(int argc, char	*argv[])
+/**
+ * @brief Calculates the number of coins in the map.
+ * 
+ * @param map Map to calculate the number of coins.
+ * @return int Total number of coins of the map.
+ */
+int	getcoins(t_map *map)
 {
-	
-	if (argc != 2)
-		end(1, "Invalid number of arguments");
-	// atexit(check_leaks);
-	t_map *map = create_map(load_map(argv[1]));
-	check_update_map(map);
-	print_map(map);
-	
-	t_game *game = create_game(map);
+	int	i;
+	int	j;
+	int	coins;
 
-	mlx_loop(game->mlx);
-	
-	freemap(map);
-	return (0);
+	i = 0;
+	coins = 0;
+	while (i < map->height)
+	{
+		j = 0;
+		while (j < map->width)
+		{
+			if (map->map[i][j] == 'C')
+				coins++;
+			j++;
+		}
+		i++;
+	}
+	return (coins);
 }

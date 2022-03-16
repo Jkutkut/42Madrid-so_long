@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 20:46:29 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/16 22:15:14 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ t_game	*create_game(t_map *map)
 		return (NULL);
 	printf("Creating map\n");
 	game->map = map;
+	game->coins = getcoins(map);
 	printf("Creating mlx\n");
 	game->mlx = mlx_init();
 	printf("Creating window\n");
