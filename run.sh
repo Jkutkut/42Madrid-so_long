@@ -10,4 +10,9 @@ runleak() {
 
 make
 clear
-runleak so_long maps/map_subject_01.ber
+if [ "$1" = "n" ]; then
+	./so_long maps/map_subject_01.ber ||
+	echo "Error"
+else
+	runleak so_long maps/map_subject_01.ber
+fi
