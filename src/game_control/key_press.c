@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 13:17:41 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/19 19:13:23 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	key_press(int keycode, t_game *game)
 {
 	if (keycode == KEY_ESC)
-		freeend(1, "Thanks for playing UwU.", game);
+		freeend(0, "Thanks for playing UwU.", game);
 	else if (keycode == KEY_W || keycode == KEY_UP)
 		move_player(0, -1, game);
 	else if (keycode == KEY_A || keycode == KEY_LEFT)
