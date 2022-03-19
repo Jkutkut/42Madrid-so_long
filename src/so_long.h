@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 18:39:31 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/19 18:35:51 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,8 +25,10 @@
 #include "so_long_structs.h"
 
 #include "libft/libft.h"
-#include "map/map.h"
 #include "game/game.h"
+#include "game_control/game_control.h"
+#include "game_UI/game_ui.h"
+#include "map/map.h"
 #include "tools/tools.h"
 
 

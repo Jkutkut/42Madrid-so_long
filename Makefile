@@ -36,11 +36,20 @@ else
 endif
 
 # Binaries variables
-GAME			=	controls.c \
-					create_game.c \
+GAME			=	create_game.c
+
+GAME_CONTROL	=	can_move_there.c \
+					close_game.c \
+					key_press.c \
 					load_controls.c \
-					load_imgs.c \
-					load_level.c
+					move_player.c
+
+GAME_UI			=	load_imgs.c \
+					show_border.c \
+					show_img.c \
+					show_level.c \
+					show_player.c \
+					show_wall.c
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
@@ -58,6 +67,8 @@ TOOLS			=	end.c \
 
 BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 					${GAME:%.c=bin/game/%.o} \
+					${GAME_CONTROL:%.c=bin/game_control/%.o} \
+					${GAME_UI:%.c=bin/game_UI/%.o} \
 					${MAP:%.c=bin/map/%.o} \
 					${TOOLS:%.c=bin/tools/%.o}
 

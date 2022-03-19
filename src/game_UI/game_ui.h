@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:26:15 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 18:13:56 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/19 18:37:20 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,8 +17,9 @@
 
 void	load_imgs(t_game *game);
 void	show_border(t_game *game);
-void	showimg(t_img *img, int x, int y, t_game *game);
+void	show_img(t_img *img, int x, int y, t_game *game);
 void	show_level(t_game *game);
+void	show_player(t_game *game);
 void	show_wall(t_game *game, int x, int y);
 
 #endif

@@ -1,20 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_level.c                                       :+:      :+:    :+:   */
+/*   show_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 13:50:38 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 18:10:51 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/19 18:36:45 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/19 18:37:05 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
-
-
+#include "game_ui.h"
 
 void	show_player(t_game *game)
 {
-	showimg(game->imgplayer[0], game->player.x, game->player.y, game);
+	show_img(game->imgplayer[0], game->player.x, game->player.y, game);
 }
