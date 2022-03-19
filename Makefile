@@ -85,10 +85,10 @@ NAME			=	$(MANDATORY_EXE)
 # Triggers
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MINILIBX) $(MANDATORY)
+$(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
 	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
-	@#$(CC) $(MANDATORY) $(LIBFT)  -o $(NAME)
+	@#$(CC) $(MANDATORY) $(LIBFT) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bin/%.o: src/%.c
@@ -98,7 +98,7 @@ bin/%.o: src/%.c
 	@$(COMPILE) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
-$(MINILIBX):
+$(MINILIBX)/libmlx.a:
 	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
 	@make -C $(MINILIBX)
 	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
@@ -107,7 +107,7 @@ $(LIBFT):
 	@make -C $(dir $(LIBFT)) BIN="../../bin/libft"
 
 # Clean logic
-.PHONY: re fclean clean $(MINILIBX) $(LIBFT)
+.PHONY: re fclean clean $(MINILIBX)
 
 re: fclean all
 
