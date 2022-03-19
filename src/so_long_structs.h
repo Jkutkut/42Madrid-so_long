@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:39:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/16 22:13:39 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/19 12:38:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ typedef t_player t_key;
 typedef struct s_game
 {
 	t_map		*map;
-	t_player	*player;
+	t_player	player;
 	int			coins;
 	t_img		**imgplayer;
 	t_img		**imgenemy;
