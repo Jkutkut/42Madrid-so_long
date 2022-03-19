@@ -46,6 +46,7 @@ GAME_CONTROL	=	can_move_there.c \
 
 GAME_UI			=	load_imgs.c \
 					show_border.c \
+					show_cell.c \
 					show_img.c \
 					show_level.c \
 					show_player.c \
