@@ -36,7 +36,8 @@ else
 endif
 
 # Binaries variables
-GAME			=	create_game.c \
+GAME			=	controls.c \
+					create_game.c \
 					load_controls.c \
 					load_imgs.c \
 					load_level.c

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:50:38 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/16 22:02:19 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/19 12:57:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,6 +72,11 @@ void	show_border(t_game *game)
 		game->map->height - 1, game);
 }
 
+void	show_player(t_game *game)
+{
+	showimg(game->imgplayer[0], game->player.x, game->player.y, game);
+}
+
 /**
  * @brief Show on screen the given game.
  * 
@@ -103,4 +108,5 @@ void	load_level(t_game *game)
 		}
 		i++;
 	}
+	show_player(game);
 }
