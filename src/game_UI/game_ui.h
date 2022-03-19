@@ -1,20 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_level.c                                       :+:      :+:    :+:   */
+/*   game_ui.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/13 13:50:38 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 18:10:51 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/19 13:26:15 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/19 18:13:56 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#ifndef GAME_UI_H
+# define GAME_UI_H
 
+#include "../so_long.h"
 
+void	load_imgs(t_game *game);
+void	show_border(t_game *game);
+void	showimg(t_img *img, int x, int y, t_game *game);
+void	show_level(t_game *game);
+void	show_wall(t_game *game, int x, int y);
 
-void	show_player(t_game *game)
-{
-	showimg(game->imgplayer[0], game->player.x, game->player.y, game);
-}
+#endif
