@@ -45,6 +45,7 @@ MAP				=	check_map_filename.c \
 					check_update_map.c \
 					create_map.c \
 					endswith.c \
+					getcoins.c \
 					load_map.c
 
 TOOLS			=	end.c \
