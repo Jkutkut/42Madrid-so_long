@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 21:28:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:02:38 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,9 @@
 
 # ifndef BONUS
 #  define BONUS 0
-#  define ALL_ELEMENTS "10CEPF"
-# else
 #  define ALL_ELEMENTS "10CEP"
+# else
+#  define ALL_ELEMENTS "10CEPF"
 # endif
 
 # define BUFFER_SIZE 1024
