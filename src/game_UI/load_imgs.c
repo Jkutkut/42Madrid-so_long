@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 18:41:03 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:01:20 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -112,12 +112,8 @@ static void	load_env(t_game *game)
  */
 void	load_imgs(t_game *game)
 {
-	printf("Loading player and enemies\n");
 	load_players(game);
-	printf("Loading coin\n");
 	game->imgcoin = load_xpm(game, COIN_SRC);
-	printf("Loading exit\n");
 	load_exit(game);
-	printf("Loading wall and floor\n");
 	load_env(game);
 }
