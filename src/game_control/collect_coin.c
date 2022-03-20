@@ -1,19 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   close_game.c                                       :+:      :+:    :+:   */
+/*   collect_coin.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:37:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 12:05:14 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 12:08:52 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/20 12:09:56 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
-int	close_game(t_game *game)
+void	collect_coin(t_game *game)
 {
-	freeend(0, "\n\nThanks for playing UwU.", game);
-	return (0);
+	game->coins--;
+	game->map->map[game->player.y][game->player.x] = '0';
+	if (game->coins == 0)
+		freeend(0, "\n\nYou win UwU", game);
 }

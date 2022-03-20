@@ -40,6 +40,7 @@ GAME			=	create_game.c
 
 GAME_CONTROL	=	can_move_there.c \
 					close_game.c \
+					collect_coin.c \
 					key_press.c \
 					load_controls.c \
 					move_player.c
