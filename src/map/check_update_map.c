@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 12:24:58 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:59:22 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,6 @@ void	check_update_map(t_map *m)
 	m->width = ft_strlen(m->map[0]);
 	while (m->map[i] != NULL)
 	{
-		printf("%s\n", m->map[i]);
 		line_len = ft_strlen(m->map[i]);
 		if (line_len != m->width)
 		{
