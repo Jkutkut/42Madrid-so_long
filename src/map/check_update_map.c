@@ -6,36 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 19:31:31 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:02:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
-
-/**
- * @brief Check if there's only one player on the map.
- * If the map is not valid, ends the program.
- * 
- * @param m Map to check
- */
-static void	check_unique_player(t_map *m)
-{
-	int	i;
-	int	j;
-	int	player_count;
-
-	i = 0;
-	player_count = 0;
-	while (m->map[i])
-	{
-		j = 0;
-		while (m->map[i][j])
-			if (m->map[i][j++] == 'P')
-				if (++player_count > 1)
-					end(1, "Too many players.");
-		i++;
-	}
-}
 
 /**
  * @brief Checks if the given map is valid.

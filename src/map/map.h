@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 19:56:24 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:02:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@
 # define BUFFER_SIZE 1024
 
 void	check_map_filename(char *filename);
+void	check_unique_player(t_map *m);
 void	check_update_map(t_map *m);
 void	check_valid_line(char *line);
 int		count_coins(t_map *map);
