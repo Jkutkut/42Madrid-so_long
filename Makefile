@@ -51,8 +51,7 @@ GAME_UI			=	load_imgs.c \
 					show_img.c \
 					show_level.c \
 					show_player.c \
-					show_wall.c \
-					update_moves.c # MAN_BONUS
+					show_wall.c
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
@@ -68,18 +67,23 @@ TOOLS			=	end.c \
 					ft_strextend.c \
 					print_map.c
 
-BINS_MANDATORY	=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
+COMMON			=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 					${GAME:%.c=bin/game/%.o} \
 					${GAME_CONTROL:%.c=bin/game_control/%.o} \
 					${GAME_UI:%.c=bin/game_UI/%.o} \
 					${MAP:%.c=bin/map/%.o} \
 					${TOOLS:%.c=bin/tools/%.o}
 
-MAN_MAIN_SRC	=	src/so_long.c
-MAN_MAIN_BIN	=	${MAN_MAIN_SRC:src/%.c=bin/%.o}
+MANDATORY_ONLY	=	game_UI/update_moves.c
+BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
+BINS_MANDATORY	=	${COMMON} \
+					${MANDATORY_ONLY:%.c=bin/%.o}
+
+MAIN_SRC	=	src/so_long.c
+MAIN_BIN	=	${MAIN_SRC:src/%.c=bin/%.o}
 
 
-MANDATORY		=	$(MAN_MAIN_BIN) $(BINS_MANDATORY) 
+MANDATORY		=	$(MAIN_BIN) $(BINS_MANDATORY) 
 
 NAME			=	$(MANDATORY_EXE)
 
@@ -92,6 +96,9 @@ $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@#$(CC) $(MANDATORY) $(LIBFT) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
+
+bonus:
+	make MANDATORY_ONLY="${BONUS_ONLY}"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
