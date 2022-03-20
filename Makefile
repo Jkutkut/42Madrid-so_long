@@ -126,12 +126,14 @@ $(LIBFT):
 re: fclean all
 
 clean:
-	$(info Removing binary directory)
+	@echo "${RED}Removing${NC} ${YELLOW}Libft${NC} binaries"
+	@make -C $(dir $(LIBFT)) fclean BIN="../../bin/libft"
+	@echo "${RED}Removing${NC} ${YELLOW}MINILIBX${NC} binaries"
+	@make -C $(MINILIBX) clean
+	@echo "${RED}Removing${NC} binary directory"
 	@rm -rf ./bin
-	make -C $(MINILIBX) clean
-	make -C $(dir $(LIBFT)) fclean BIN="../../bin/libft"
 
 fclean: clean
-	$(info Removing $(MANDATORY_EXE) $(BONUS_EXE))
+	@echo "${RED}Removing${NC} $(MANDATORY_EXE) $(BONUS_EXE)"
 	@rm -f $(MANDATORY_EXE) $(BONUS_EXE)
-	$(info Project now clean.)
+	@echo "Project now ${GREEN}clean${NC}."
