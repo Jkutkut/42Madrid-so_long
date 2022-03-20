@@ -56,10 +56,12 @@ GAME_UI			=	load_imgs.c \
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
+					check_valid_line.c \
 					count_coins.c \
 					create_map.c \
 					endswith.c \
-					load_map.c
+					load_map.c \
+					map_contains.c
 
 TOOLS			=	end.c \
 					freearray.c \
@@ -83,29 +85,27 @@ BINS_MANDATORY	=	${COMMON} \
 MAIN_SRC	=	src/so_long.c
 MAIN_BIN	=	${MAIN_SRC:src/%.c=bin/%.o}
 
-
 MANDATORY		=	$(MAIN_BIN) $(BINS_MANDATORY) 
 
 NAME			=	$(MANDATORY_EXE)
 
+COMPILING_BONUS	=	
 
 # Triggers
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
-	@$(CC) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
-	@#$(CC) $(MANDATORY) $(LIBFT) -o $(NAME)
+	$(COMPILE) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	make MANDATORY_ONLY="${BONUS_ONLY}"
+	make MANDATORY_ONLY="${BONUS_ONLY}" COMPILING_BONUS="-D BONUS=1"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
 	@mkdir -p $(dir $@)
-	@#$(COMPILE) -I/usr/include -I$(MINILIBX) -O3 -c $< -o $@
-	@$(COMPILE) -c $< -o $@
+	@$(COMPILE) $(COMPILING_BONUS) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
 $(MINILIBX)/libmlx.a:
