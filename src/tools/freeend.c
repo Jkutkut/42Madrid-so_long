@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:14:13 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/19 20:12:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:24:48 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 static void	free_img_arr(t_img **img, int len, t_game *game)
 {
-	int i;
+	int	i;
 
 	if (!img)
 		return ;
@@ -22,7 +22,7 @@ static void	free_img_arr(t_img **img, int len, t_game *game)
 	while (i < len)
 	{
 		if (!img[i])
-			break;
+			break ;
 		mlx_destroy_image(game->mlx, img[i++]);
 	}
 	free(img);
