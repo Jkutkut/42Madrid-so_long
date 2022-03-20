@@ -4,3 +4,5 @@
 
 ## ThingsToDo:
 - End without leaks -> clean_end
+  - Invalid map
+  - Inconsistent map
