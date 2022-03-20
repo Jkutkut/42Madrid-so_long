@@ -6,16 +6,16 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 18:49:56 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:25:48 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOOLS_H
 # define TOOLS_H
 
-#include <stdlib.h>
+# include <stdlib.h>
 
-#include "../so_long.h"
+# include "../so_long.h"
 
 void	end(int endtype, char *msg);
 void	freearray(char **array);
