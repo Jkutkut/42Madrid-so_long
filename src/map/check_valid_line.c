@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:28:54 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 19:51:30 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 20:50:00 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,6 @@ void	check_valid_line(char *line)
 {
 	int	i;
 
-	printf("required '%s'\n", REQUIRED_ELEMENTS);
-	printf("%d\n", BONUS);
 	i = 1;
 	while (line[i] && line[i + 1])
 	{

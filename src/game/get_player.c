@@ -1,21 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   get_player.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 20:49:27 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 20:19:15 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/20 20:49:30 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
+#include "game.h"
 
-# include "../so_long.h"
+void	get_player(t_game *game)
+{
+	int	i;
+	int	j;
 
-t_game	*create_game(t_map *map);
-void	get_player(t_game *game);
-
-#endif
+	i = 0;
+	while (i < game->map->height)
+	{
+		j = 0;
+		while (j < game->map->width)
+		{
+			if (game->map->map[i][j] == 'P')
+			{
+				game->player.x = j;
+				game->player.y = i;
+				game->map->map[i][j] = '0';
+				i = game->map->height;
+				j = game->map->width;
+			}
+			j++;
+		}
+		i++;
+	}
+}

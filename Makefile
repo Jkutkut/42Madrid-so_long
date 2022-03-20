@@ -36,7 +36,7 @@ else
 endif
 
 # Binaries variables
-GAME			=	create_game.c
+GAME			=	get_player.c
 
 GAME_CONTROL	=	can_move_there.c \
 					close_game.c \
@@ -78,8 +78,10 @@ COMMON			=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 					${MAP:%.c=bin/map/%.o} \
 					${TOOLS:%.c=bin/tools/%.o}
 
-MANDATORY_ONLY	=	game_UI/update_moves.c
+MANDATORY_ONLY	=	game/create_game.c \
+					game_UI/update_moves.c
 BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
+
 BINS_MANDATORY	=	${COMMON} \
 					${MANDATORY_ONLY:%.c=bin/%.o}
 
