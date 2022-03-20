@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:28:29 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 20:17:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 12:44:54 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,9 +35,10 @@ char	**load_map(char *filename)
 	while (1)
 	{
 		r = read(fd, &line, BUFFER_SIZE);
-		if (r == 0)
-			break ;
+		line[r] = '\0';
 		ft_strextend(&m, line);
+		if (r != BUFFER_SIZE)
+			break ;
 	}
 	if (m == NULL)
 		end(1, "Map file is empty\n");
