@@ -1,25 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   move_player.c                                      :+:      :+:    :+:   */
+/*   update_moves.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:23:59 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 11:43:51 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/20 11:49:54 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control.h"
+#include "game_ui.h"
 
-void	move_player(int dx, int dy, t_game *game)
+void	update_moves(void)
 {
-	if (can_move_there(dx, dy, game))
-	{
-		show_cell(game->player.x, game->player.y, game);
-		game->player.x += dx;
-		game->player.y += dy;
-		update_moves();
-		show_player(game);
-	}
+	static int	moves = 0;
+
+	if (moves++ > 0)
+		ft_putchar_fd('\r', 1);
+	ft_putstr_fd("Moves: ", 1);
+	ft_putnbr_fd(moves, 1);
+	fflush(stdout);
 }

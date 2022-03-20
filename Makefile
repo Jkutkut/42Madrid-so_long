@@ -50,7 +50,8 @@ GAME_UI			=	load_imgs.c \
 					show_img.c \
 					show_level.c \
 					show_player.c \
-					show_wall.c
+					show_wall.c \
+					update_moves.c # MAN_BONUS
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
