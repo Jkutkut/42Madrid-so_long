@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 18:36:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 11:30:38 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 13:13:18 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ unsigned int	mlx_rgb_to_int(int r, int g, int b)
 
 void	show_player(t_game *game)
 {
-	unsigned int color;
-	int x;
-	int y;
+	unsigned int	color;
+	int				x;
+	int				y;
 
 	show_cell(game->player.x, game->player.y, game);
 	y = 0;
@@ -37,7 +37,7 @@ void	show_player(t_game *game)
 		while (x < 64)
 		{
 			color = mlx_get_pixel(game->imgplayer[0], x, y);
-			if (color != mlx_rgb_to_int(61, 37, 59)) // 3D253B
+			if (color != mlx_rgb_to_int(61, 37, 59))
 				mlx_pixel_put(game->mlx, game->win,
 					x + game->player.x * 64,
 					y + game->player.y * 64, color);
