@@ -1,28 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_ui.h                                          :+:      :+:    :+:   */
+/*   show_exits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:26:15 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 18:58:02 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 18:56:42 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/20 18:57:26 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_UI_H
-# define GAME_UI_H
+#include "game_ui.h"
 
-# include "../so_long.h"
+void	show_exits(t_game *game)
+{
+	int	i;
+	int	j;
 
-void	load_imgs(t_game *game);
-void	show_border(t_game *game);
-void	show_cell(int x, int y, t_game *game);
-void	show_exits(t_game *game);
-void	show_img(t_img *img, int x, int y, t_game *game);
-void	show_level(t_game *game);
-void	show_player(t_game *game);
-void	show_wall(t_game *game, int x, int y);
-void	update_moves(t_game *game);
-
-#endif
+	j = 0;
+	while (j < game->map->height)
+	{
+		i = 0;
+		while (i < game->map->width)
+		{
+			if (game->map->map[j][i] == 'E')
+				show_cell(i, j, game);
+			i++;
+		}
+		j++;
+	}
+}

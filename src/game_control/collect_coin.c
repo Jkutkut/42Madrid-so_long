@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 12:08:52 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:23:48 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 18:57:43 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,5 +17,5 @@ void	collect_coin(t_game *game)
 	game->coins--;
 	game->map->map[game->player.y][game->player.x] = '0';
 	if (game->coins == 0)
-		show_level(game);
+		show_exits(game);
 }
