@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_player.c                                      :+:      :+:    :+:   */
+/*   show_entity.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 18:36:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:13:18 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/20 21:57:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,26 +23,47 @@ unsigned int	mlx_rgb_to_int(int r, int g, int b)
 	return (r << 16 | g << 8 | b);
 }
 
+void	show_enemy(t_game *game, int x, int y)
+{
+	show_entity(game->imgenemy[0], x, y, game);
+}
+
+void	show_enemies(t_game *game)
+{
+	int	i;
+
+	i = -1;
+	while (game->enemies[++i])
+		show_enemy(game, game->enemies[i]->x, game->enemies[i]->y);
+}
+
 void	show_player(t_game *game)
 {
-	unsigned int	color;
-	int				x;
-	int				y;
+	show_entity(game->imgplayer[0], game->player.x, game->player.y, game);
+}
 
-	show_cell(game->player.x, game->player.y, game);
-	y = 0;
-	while (y < 64)
+void	show_entity(t_img *entity, int x, int y, t_game *game)
+{
+	unsigned int	color;
+	unsigned int	ignore_color;
+	int				dx;
+	int				dy;
+
+	ignore_color = mlx_rgb_to_int(61, 37, 59);
+	show_cell(x, y, game);
+	dy = 0;
+	while (dy < 64)
 	{
-		x = 0;
-		while (x < 64)
+		dx = 0;
+		while (dx < 64)
 		{
-			color = mlx_get_pixel(game->imgplayer[0], x, y);
-			if (color != mlx_rgb_to_int(61, 37, 59))
+			color = mlx_get_pixel(entity, dx, dy);
+			if (color != ignore_color)
 				mlx_pixel_put(game->mlx, game->win,
-					x + game->player.x * 64,
-					y + game->player.y * 64, color);
-			x++;
+					dx + x * 64,
+					dy + y * 64, color);
+			dx++;
 		}
-		y++;
+		dy++;
 	}
 }

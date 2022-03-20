@@ -48,10 +48,10 @@ GAME_CONTROL	=	can_move_there.c \
 GAME_UI			=	load_imgs.c \
 					show_border.c \
 					show_cell.c \
+					show_entity.c \
 					show_exits.c \
 					show_img.c \
 					show_level.c \
-					show_player.c \
 					show_wall.c
 
 MAP				=	check_map_filename.c \
@@ -98,7 +98,7 @@ COMPILING_BONUS	=
 all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
-	@echo "\n${TITLE}Compiling${NC} ${YELLOW}mandatory${NC} into ${YELLOW}$(NAME)${NC}\c"
+	@echo "\n${TITLE}Compiling${NC} ${YELLOW}$(NAME)${NC}\c"
 	$(COMPILE) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
