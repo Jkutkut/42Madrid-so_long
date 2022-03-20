@@ -55,6 +55,7 @@ GAME_UI			=	load_imgs.c \
 					show_wall.c
 
 MAP				=	check_map_filename.c \
+					check_unique_player.c \
 					check_update_map.c \
 					check_valid_line.c \
 					count_coins.c \
