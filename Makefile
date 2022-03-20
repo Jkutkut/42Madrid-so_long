@@ -56,9 +56,9 @@ GAME_UI			=	load_imgs.c \
 
 MAP				=	check_map_filename.c \
 					check_update_map.c \
+					count_coins.c \
 					create_map.c \
 					endswith.c \
-					getcoins.c \
 					load_map.c
 
 TOOLS			=	end.c \
