@@ -42,8 +42,7 @@ GAME_CONTROL	=	can_move_there.c \
 					close_game.c \
 					collect_coin.c \
 					key_press.c \
-					load_controls.c \
-					move_player.c
+					load_controls.c
 
 GAME_UI			=	load_imgs.c \
 					show_border.c \
@@ -80,6 +79,7 @@ COMMON			=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 					${TOOLS:%.c=bin/tools/%.o}
 
 MANDATORY_ONLY	=	game/create_game.c \
+					game_control/move_player.c \
 					game_UI/update_moves.c
 BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
 
