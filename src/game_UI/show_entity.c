@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 21:57:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/20 22:04:21 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,20 +21,6 @@ unsigned int	mlx_get_pixel(t_img *img, int x, int y)
 unsigned int	mlx_rgb_to_int(int r, int g, int b)
 {
 	return (r << 16 | g << 8 | b);
-}
-
-void	show_enemy(t_game *game, int x, int y)
-{
-	show_entity(game->imgenemy[0], x, y, game);
-}
-
-void	show_enemies(t_game *game)
-{
-	int	i;
-
-	i = -1;
-	while (game->enemies[++i])
-		show_enemy(game, game->enemies[i]->x, game->enemies[i]->y);
 }
 
 void	show_player(t_game *game)
