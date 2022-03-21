@@ -6,13 +6,13 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 22:36:23 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/21 07:53:15 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
-void	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
+int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 {
 	int new_x;
 	int new_y;
@@ -24,16 +24,16 @@ void	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 		else
 			dy = 0;
 	}
-	printf("Updating enemy to [%d, %d]\n", dx, dy);
 	new_x = enemy->x + dx;
 	new_y = enemy->y + dy;
 	if (new_x == 0 || new_x == game->map->width - 1 ||
 		new_y == 0 || new_y == game->map->height - 1)
-		return ;
+		return (0);
 	if (game->map->map[new_y][new_x] == '1')
-		return ;
+		return (0);
 	enemy->x += dx;
 	enemy->y += dy;
+	return (1);
 }
 
 void	update_enemies(t_game *game)
@@ -44,8 +44,11 @@ void	update_enemies(t_game *game)
 	while (game->enemies[i])
 	{
 		show_cell(game->enemies[i]->x, game->enemies[i]->y, game);
-		move_enemy(game->enemies[i++],
-			(rand() % 3) - 1, (rand() % 3) - 1, game);
+		while (1)
+			if(move_enemy(game->enemies[i],
+				(rand() % 3) - 1, (rand() % 3) - 1, game))
+				break ;
+		i++;
 	}
 }
 
