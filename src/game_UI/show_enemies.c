@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:04:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 22:04:25 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:12:15 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	show_enemy(t_game *game, int x, int y)
 {
-	show_entity(game->imgenemy[0], x, y, game);
+	show_entity(game->imgenemy[game->e_index], x, y, game);
 }
 
 void	show_enemies(t_game *game)

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 22:04:21 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:11:57 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ unsigned int	mlx_rgb_to_int(int r, int g, int b)
 
 void	show_player(t_game *game)
 {
-	show_entity(game->imgplayer[0], game->player.x, game->player.y, game);
+	show_entity(game->imgplayer[game->p_index], game->player.x, game->player.y, game);
 }
 
 void	show_entity(t_img *entity, int x, int y, t_game *game)
