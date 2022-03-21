@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 17:14:15 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/21 17:14:46 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 int	update_game(t_game *game)
 {
 	static int	i = 0;
-	if (i++ == 20000)
+	if (i++ == 10000)
 	{
 		game->p_index = (game->p_index + 1) % P_ANI;
 		game->e_index = (game->e_index + 1) % E_ANI;
