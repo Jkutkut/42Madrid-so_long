@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 07:53:15 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/21 18:31:24 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,9 @@
 
 int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 {
-	int new_x;
-	int new_y;
+	int	new_x;
+	int	new_y;
+	int	i;
 
 	if (dx != 0 && dy != 0)
 	{
@@ -31,6 +32,14 @@ int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 		return (0);
 	if (game->map->map[new_y][new_x] == '1')
 		return (0);
+	i = 0;
+	while (game->enemies[i])
+	{
+		if (game->enemies[i]->x == new_x && game->enemies[i]->y == new_y &&
+			game->enemies[i] != enemy)
+			return (0);
+		i++;
+	}
 	enemy->x += dx;
 	enemy->y += dy;
 	return (1);
