@@ -18,8 +18,8 @@ OS			=	$(shell uname -s)
 # Libraries
 ifeq ($(OS), Darwin)
 	MINILIBX	=	mlx_mac
+	# MINILIBX	=	mlx
 else
-	# MINILIBX	=	mlx_linux
 	MINILIBX	=	mlx
 endif
 
@@ -28,11 +28,12 @@ LIBFT			=	src/libft/libft.a
 # Libraries flags
 ifeq ($(OS), Darwin)
 	# MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
-	MINILIBX_FLAGS	=	-lmlx_mac -framework OpenGL -framework AppKit
+	MINILIBX_FLAGS		=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
+	DOT_O_FLAGS			=	-Imlx_mac
+	DEFINES	=	-D MAC=1
 else
-	# MINILIBX_FLAGS	=	-L$(MINILIBX) -lmlx_Linux -L/usr/lib -I$(MINILIBX) -lXext -lX11 -lm -lz
-	# MINILIBX_FLAGS	=	-lmlx -lXext -lX11 -lm -lz
 	MINILIBX_FLAGS		=	$(MINILIBX)/libmlx.a -lXext -lX11
+	DEFINES	=	-D LINUX=1
 endif
 
 # Binaries variables
@@ -93,8 +94,6 @@ MANDATORY		=	$(MAIN_BIN) $(BINS_MANDATORY)
 
 NAME			=	$(MANDATORY_EXE)
 
-COMPILING_BONUS	=	
-
 # Triggers
 all: $(NAME)
 
@@ -104,12 +103,12 @@ $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	make MANDATORY_ONLY="${BONUS_ONLY}" COMPILING_BONUS="-D BONUS=1"
+	make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="-D BONUS=1"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
 	@mkdir -p $(dir $@)
-	@$(COMPILE) $(COMPILING_BONUS) -c $< -o $@
+	@$(COMPILE) $(DOT_O_FLAGS) $(DEFINES) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
 $(MINILIBX)/libmlx.a:
