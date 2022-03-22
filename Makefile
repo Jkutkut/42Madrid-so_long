@@ -15,23 +15,17 @@ LBLUE			=	\033[1;34m
 TITLE			=	\033[38;5;33m
 
 OS			=	$(shell uname -s)
-# Libraries
-ifeq ($(OS), Darwin)
-	MINILIBX	=	mlx_mac
-	# MINILIBX	=	mlx
-else
-	MINILIBX	=	mlx
-endif
 
+# Libraries
 LIBFT			=	src/libft/libft.a
 
-# Libraries flags
 ifeq ($(OS), Darwin)
-	# MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
+	MINILIBX	=	mlx_mac
 	MINILIBX_FLAGS		=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
 	DOT_O_FLAGS			=	-Imlx_mac
 	DEFINES	=	-D MAC=1
 else
+	MINILIBX	=	mlx
 	MINILIBX_FLAGS		=	$(MINILIBX)/libmlx.a -lXext -lX11
 	DEFINES	=	-D LINUX=1
 endif
@@ -113,7 +107,7 @@ bin/%.o: src/%.c
 
 $(MINILIBX)/libmlx.a:
 	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
-	@make -C $(MINILIBX)
+	@make -s -C $(MINILIBX)
 	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
 
 $(LIBFT):
