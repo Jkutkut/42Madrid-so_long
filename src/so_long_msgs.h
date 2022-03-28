@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:04:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 14:03:05 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:05:32 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,6 @@
 # define ERROR_NO_MAP "No map file specified.\n"
 # define ERROR_MAP_NULL "Invalid map:\n  Map is null.\n"
 # define ERROR_MAP_NOTFOUND "Map file not found.\n"
-# define ERROR_MAP_EMPTY "Map file is empty.\n"
 # define ERROR_MAP_EXTENSION "File should be a .ber file\n"
 # define ERROR_MAP_BIG "The map is too big :S.\n"
 
