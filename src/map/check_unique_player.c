@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 20:02:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 11:34:46 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:39:11 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void	check_unique_player(t_map *m)
 				if (++player_count > 1)
 				{
 					freemap(m);
-					end(1, "Too many players.");
+					end(1, ERROR_MULTIPLE_PLAYERS);
 				}
 		i++;
 	}
