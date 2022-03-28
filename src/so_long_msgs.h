@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:04:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:47:21 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:50:03 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@
 # define ERROR_MAP_NULL "Invalid map:\n  Map is null.\n"
 # define ERROR_MAP_NOTFOUND "Map file not found.\n"
 # define ERROR_MAP_EMPTY "Map file is empty.\n"
-# define ERROR_ ""
-# define ERROR_ ""
 
 # define MSG_ENDGAME "\n\nThanks for playing UwU.\n"
 # define MSG_WIN "\n\nYou win!\n"
 # define MSG_LOSE "\n\nYou lose!\n"
-# define MSG_
-# define MSG_
 
 #endif
