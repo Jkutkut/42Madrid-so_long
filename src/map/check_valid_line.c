@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:28:54 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 21:29:00 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:44:10 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ void	check_valid_line(char *line)
 	while (line[i] && line[i + 1])
 	{
 		if (!ft_hasany(ALL_ELEMENTS, line[i]))
-			end(1, "Invalid charactes in map.");
+			end(1, ERROR_MAP_INVALID_CHAR);
 		i++;
 	}
 }
