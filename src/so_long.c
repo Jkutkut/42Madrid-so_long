@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:08:54 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 17:37:47 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,8 @@ int	main(int argc, char	*argv[])
 	print_map(map);
 	game = create_game(map);
 	show_level(game);
-	mlx_loop_hook(game->mlx, &update_game, game);
+	if (BONUS)
+		mlx_loop_hook(game->mlx, &update_game, game);
 	mlx_loop(game->mlx);
 	return (0);
 }
