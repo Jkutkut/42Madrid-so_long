@@ -6,11 +6,17 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 20:02:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 11:33:36 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
+
+static void	free_map_end(t_map *map, int endtype, char *msg)
+{
+	freemap(map);
+	end(endtype, msg);
+}
 
 /**
  * @brief Checks if the given map is valid.
@@ -24,25 +30,25 @@ void	check_update_map(t_map *m)
 	int	line_len;
 
 	if (!m || !m->map || !m->map[0])
-		end(1, "Invalid map\n Map empty.");
+		free_map_end(m, 1, "Invalid map\n Map empty.\n");
 	i = 0;
 	m->width = ft_strlen(m->map[0]);
 	while (m->map[i] != NULL)
 	{
 		line_len = ft_strlen(m->map[i]);
 		if (line_len != m->width)
-			end(1, "Invalid map:\n Map width is not constant.");
+			free_map_end(m, 1, "Invalid map:\n Map width is not constant.");
 		if (m->map[i][0] != '1' || m->map[i][line_len - 1] != '1')
-			end(1, "Invalid map:\n The map must be surronded by 1s.");
+			free_map_end(m, 1, "Invalid map:\n The map must have border.");
 		check_valid_line(m->map[i]);
 		i++;
 	}
 	m->height = i;
 	while (--line_len)
 		if (m->map[0][line_len] != '1' || m->map[i - 1][line_len] != '1')
-			end(1, "Invalid map:\n The map must be surronded by 1s.");
+			free_map_end(m, 1, "Invalid map:\n The map must have border.");
 	while (REQUIRED_ELEMENTS[line_len])
 		if (!map_contains(m, REQUIRED_ELEMENTS[line_len++]))
-			end(1, "Invalid map:\n The map must contain CEP");
+			free_map_end(m, 1, "Invalid map:\n The map must contain CEP");
 	check_unique_player(m);
 }
