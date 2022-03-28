@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:20:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:13:34 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,5 @@ int	key_press(int keycode, t_game *game)
 		move_player(0, 1, game);
 	else if (keycode == KEY_D || keycode == KEY_RIGHT)
 		move_player(1, 0, game);
-	else
-		printf("Unknown key %d\n", keycode);
 	return (0);
 }

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 18:31:24 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:15:21 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	move_player(int dx, int dy, t_game *game)
 			collect_coin(game);
 		if (game->map->map[game->player.y][game->player.x] == 'E')
 			if (game->coins == 0)
-				freeend(0, "\n\nYou win!", game);
+				freeend(0, MSG_WIN, game);
 	}
 	update_enemies(game);
 	show_enemies(game);
@@ -84,5 +84,5 @@ void	move_player(int dx, int dy, t_game *game)
 	while (game->enemies[++i])
 		if (game->enemies[i]->x == game->player.x &&
 			game->enemies[i]->y == game->player.y)
-			freeend(0, "\n\nYou lose!", game);
+			freeend(0, MSG_LOSE, game);
 }

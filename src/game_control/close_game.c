@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:37:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:20:53 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:12:09 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,6 @@
 
 int	close_game(t_game *game)
 {
-	freeend(0, "\n\nThanks for playing UwU.", game);
+	freeend(0, MSG_ENDGAME, game);
 	return (0);
 }

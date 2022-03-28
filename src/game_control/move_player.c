@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:23:59 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 21:49:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:15:50 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,6 @@ void	move_player(int dx, int dy, t_game *game)
 		collect_coin(game);
 	if (game->map->map[game->player.y][game->player.x] == 'E')
 		if (game->coins == 0)
-			freeend(0, "\n\nYou win!", game);
+			freeend(0, MSG_WIN, game);
 	show_player(game);
 }

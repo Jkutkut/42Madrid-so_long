@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 17:14:46 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:08:54 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int	main(int argc, char	*argv[])
 	t_game	*game;
 
 	if (argc != 2)
-		end(1, "Invalid number of arguments");
+		end(1, ERROR_INVALID_ARGS);
 	map = create_map(load_map(argv[1]));
 	check_update_map(map);
 	print_map(map);

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 21:01:31 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:10:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ static t_enemy	*create_enemy(t_game *game, int x, int y)
 
 	enemy = (t_enemy *)malloc(sizeof(t_enemy));
 	if (!enemy)
-		end(1, "Error: malloc failed");
+		end(1, ERROR_MALLOC);
 	enemy->x = x;
 	enemy->y = y;
 	game->map->map[y][x] = '0';
@@ -52,10 +52,10 @@ static void	get_enemies(t_game *game)
 	int	y;
 	int	index;
 
-	printf("Enemies\n");
+	ft_putstr_fd("Enemies\n", 1);
 	game->enemies = malloc(sizeof(t_enemy *) * (count_enemy(game) + 1));
 	if (!game->enemies)
-		end(1, "Error: malloc failed\n");
+		end(1, ERROR_MALLOC);
 	y = 0;
 	index = 0;
 	while (y < game->map->height)
