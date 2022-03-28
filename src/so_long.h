@@ -6,12 +6,14 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/22 08:10:29 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 11:44:44 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_H
 # define SO_LONG_H
+
+#define LINUX 1 // TODO debug
 
 // C libraries
 # ifdef LINUX
