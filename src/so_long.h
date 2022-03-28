@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:07:42 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:00:19 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,14 @@
 # ifdef LINUX
 #  include "../mlx/mlx.h"
 #  include "../mlx/mlx_int.h"
+#  define GAME_NAME "so_long Linux"
+#  define MAX_WIDTH 10
+#  define MAX_HEIGHT 10
 # else
 #  include "../mlx_mac/mlx.h"
+#  define GAME_NAME "so_long Mac"
+#  define MAX_WIDTH 10
+#  define MAX_HEIGHT 10
 # endif
 
 # include <stdio.h>

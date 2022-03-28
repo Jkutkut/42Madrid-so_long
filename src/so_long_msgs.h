@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:04:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:56:39 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 14:03:05 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,8 @@
 # define ERROR_MAP_NOTFOUND "Map file not found.\n"
 # define ERROR_MAP_EMPTY "Map file is empty.\n"
 # define ERROR_MAP_EXTENSION "File should be a .ber file\n"
+# define ERROR_MAP_BIG "The map is too big :S.\n"
+
 # define ERROR_MULTIPLE_PLAYERS "Too many players.\n"
 # define ERROR_MAP_EMPTY "Invalid map.\n  Map empty.\n"
 # define ERROR_MAP_WIDTH "Invalid map:\n  Map width is not constant.\n"
