@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:28:29 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 12:44:54 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 11:26:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,8 @@
 /**
  * @brief Reads the map file and returns a 2D array of chars. If file is
  * invalid, exits the program.
+ * If empty map, ends the program.
+ * If malloc fails when spliting, returns NULL.
  * 
  * @param filename 
  * @return char** 
@@ -32,13 +34,12 @@ char	**load_map(char *filename)
 	if (fd == -1)
 		end(1, "Map file not found\n");
 	m = NULL;
-	while (1)
+	r = BUFFER_SIZE;
+	while (r == BUFFER_SIZE)
 	{
 		r = read(fd, &line, BUFFER_SIZE);
 		line[r] = '\0';
 		ft_strextend(&m, line);
-		if (r != BUFFER_SIZE)
-			break ;
 	}
 	if (m == NULL)
 		end(1, "Map file is empty\n");
