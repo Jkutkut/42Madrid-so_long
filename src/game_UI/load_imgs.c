@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:01:20 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 11:55:16 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,7 +29,7 @@ static t_img	*load_xpm(t_game *game, char *path)
 	{
 		ft_putstr_fd("Error loading image: ", 2);
 		ft_putendl_fd(path, 2);
-		end(1, "Error loading image");
+		freeend(1, "Error loading image\n.", game);
 	}
 	return (img);
 }
@@ -41,31 +41,29 @@ static t_img	*load_xpm(t_game *game, char *path)
  */
 static void	load_players(t_game *game)
 {
-	char	*path;
+	char	path[24];
 	int		i;
 
-	path = ft_strdup("./res/cat/cat00.xpm");
+	ft_memcpy(path, "./res/cat/cat00.xpm", 20);
 	game->imgplayer = malloc(sizeof(t_player *) * (P_ANI));
 	if (game->imgplayer == NULL)
-		end(1, "Error: malloc failed");
+		freeend(1, "Error: malloc failed\n", game);
 	i = 0;
 	while (++i <= P_ANI)
 	{
 		path[14] = i % 10 + '0';
 		game->imgplayer[i - 1] = load_xpm(game, path);
 	}
-	free(path);
-	path = ft_strdup("./res/enemy/enemy00.xpm");
+	ft_memcpy(path, "./res/enemy/enemy00.xpm", 24);
 	game->imgenemy = malloc(sizeof(t_player *) * (E_ANI));
 	if (game->imgenemy == NULL)
-		end(1, "Error: malloc failed");
+		freeend(1, "Error: malloc failed\n", game);
 	i = 0;
 	while (++i <= E_ANI)
 	{
 		path[18] = i % 10 + '0';
 		game->imgenemy[i - 1] = load_xpm(game, path);
 	}
-	free(path);
 }
 
 /**
@@ -77,7 +75,7 @@ static void	load_exit(t_game *game)
 {
 	game->imgexit = malloc(sizeof(t_img *) * (2));
 	if (game->imgexit == NULL)
-		end(1, "Error: malloc failed");
+		freeend(1, "Error: malloc failed", game);
 	game->imgexit[EXIT_O] = load_xpm(game, EXIT_OPEN_SRC);
 	game->imgexit[EXIT_C] = load_xpm(game, EXIT_CLOSED_SRC);
 }
@@ -92,7 +90,7 @@ static void	load_env(t_game *game)
 {
 	game->imgenv = malloc(sizeof(t_player *) * (ENV_SRCS));
 	if (game->imgenv == NULL)
-		end(1, "Error: malloc failed");
+		freeend(1, "Error: malloc failed\n", game);
 	game->imgenv[ENV_FLOOR] = load_xpm(game, ENV_FLOOR_SRC);
 	game->imgenv[ENV_L_T] = load_xpm(game, ENV_L_T_SRC);
 	game->imgenv[ENV_L_L] = load_xpm(game, ENV_L_L_SRC);
