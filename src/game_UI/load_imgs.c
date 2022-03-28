@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 11:55:16 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:27:12 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,9 +27,9 @@ static t_img	*load_xpm(t_game *game, char *path)
 	img = mlx_xpm_file_to_image(game->mlx, path, &i, &i);
 	if (img == NULL)
 	{
-		ft_putstr_fd("Error loading image: ", 2);
+		ft_putstr_fd(ERROR_LOADING_IMG_DETAIL, 2);
 		ft_putendl_fd(path, 2);
-		freeend(1, "Error loading image\n.", game);
+		freeend(1, ERROR_LOADING_IMG, game);
 	}
 	return (img);
 }
@@ -44,24 +44,24 @@ static void	load_players(t_game *game)
 	char	path[24];
 	int		i;
 
-	ft_memcpy(path, "./res/cat/cat00.xpm", 20);
+	ft_memcpy(path, PLAYER_SRC_BASE, ft_strlen(PLAYER_SRC_BASE) + 1);
 	game->imgplayer = malloc(sizeof(t_player *) * (P_ANI));
 	if (game->imgplayer == NULL)
 		freeend(1, "Error: malloc failed\n", game);
 	i = 0;
 	while (++i <= P_ANI)
 	{
-		path[14] = i % 10 + '0';
+		path[ft_strlen(PLAYER_SRC_BASE) - ft_strlen(IMG_IND)] = i % 10 + '0';
 		game->imgplayer[i - 1] = load_xpm(game, path);
 	}
-	ft_memcpy(path, "./res/enemy/enemy00.xpm", 24);
+	ft_memcpy(path, ENEMY_SRC_BASE, ft_strlen(ENEMY_SRC_BASE) + 1);
 	game->imgenemy = malloc(sizeof(t_player *) * (E_ANI));
 	if (game->imgenemy == NULL)
 		freeend(1, "Error: malloc failed\n", game);
 	i = 0;
 	while (++i <= E_ANI)
 	{
-		path[18] = i % 10 + '0';
+		path[ft_strlen(ENEMY_SRC_BASE) - ft_strlen(IMG_IND)] = i % 10 + '0';
 		game->imgenemy[i - 1] = load_xpm(game, path);
 	}
 }
