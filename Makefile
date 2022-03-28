@@ -82,8 +82,8 @@ BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
 BINS_MANDATORY	=	${COMMON} \
 					${MANDATORY_ONLY:%.c=bin/%.o}
 
-MAIN_SRC	=	src/so_long.c
-MAIN_BIN	=	${MAIN_SRC:src/%.c=bin/%.o}
+MAIN_SRC		=	src/so_long.c
+MAIN_BIN		=	${MAIN_SRC:src/%.c=bin/%.o}
 
 MANDATORY		=	$(MAIN_BIN) $(BINS_MANDATORY) 
 
@@ -94,11 +94,11 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}$(NAME)${NC}\c"
-	$(COMPILE) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@$(COMPILE) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="$(DEFINES) -D BONUS=1"
+	@make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="$(DEFINES) -D BONUS=1"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
