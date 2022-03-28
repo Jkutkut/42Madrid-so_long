@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:10:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:47:55 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,6 @@ static void	get_enemies(t_game *game)
 	int	y;
 	int	index;
 
-	ft_putstr_fd("Enemies\n", 1);
 	game->enemies = malloc(sizeof(t_enemy *) * (count_enemy(game) + 1));
 	if (!game->enemies)
 		end(1, ERROR_MALLOC);
