@@ -20,14 +20,15 @@ OS			=	$(shell uname -s)
 LIBFT			=	src/libft/libft.a
 
 ifeq ($(OS), Darwin)
-	MINILIBX	=	mlx_mac
-	MINILIBX_FLAGS		=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
-	DOT_O_FLAGS			=	-Imlx_mac
-	DEFINES	=	-D MAC=1
+	MINILIBX		=	mlx_mac
+	MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
+	DOT_O_FLAGS		=	-Imlx_mac
+	DEFINES			=	-D MAC=1
 else
-	MINILIBX	=	mlx
-	MINILIBX_FLAGS		=	$(MINILIBX)/libmlx.a -lXext -lX11
-	DEFINES	=	-D LINUX=1
+	MINILIBX		=	mlx
+	#MINILIBX		=	mlx_linux
+	MINILIBX_FLAGS	=	$(MINILIBX)/libmlx.a -lXext -lX11
+	DEFINES			=	-D LINUX=1
 endif
 
 # Binaries variables
@@ -97,7 +98,7 @@ $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="-D BONUS=1"
+	make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="$(DEFINES) -D BONUS=1"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
