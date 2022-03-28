@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 20:20:41 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:58:40 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ t_game	*create_game(t_map *map)
 	get_player(game);
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx,
-			map->width * 64, map->height * 64, "so_long");
+			map->width * 64, map->height * 64, GAME_NAME);
 	load_imgs(game);
 	load_controls(game);
 	return (game);
