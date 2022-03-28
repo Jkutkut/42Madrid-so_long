@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:07:11 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/13 20:16:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/28 13:37:35 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@
 void	check_map_filename(char *filename)
 {
 	if (!filename)
-		end(1, "No map file specified\n");
+		end(1, ERROR_NO_MAP);
 	if (!endswith(filename, ".ber"))
-		end(1, "File should be a .ber file\n");
+		end(1, ERROR_MAP_EXTENSION);
 }
