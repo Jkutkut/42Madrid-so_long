@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 16:49:53 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 19:42:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,9 +20,7 @@
 
 # define REQUIRED_ELEMENTS "CEP"
 
-#ifndef ALL_ELEMENTS
-#  define ALL_ELEMENTS "10CEP"
-#endif
+# define ALL_ELEMENTS "10CEP"
 
 # define BUFFER_SIZE 1024
 
