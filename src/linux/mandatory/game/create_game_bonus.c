@@ -6,12 +6,18 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 17:44:12 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:20:14 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
+/**
+ * @brief Counts the number of enemies in the map.
+ * 
+ * @param game Game structure.
+ * @return int Number of enemies.
+ */
 static int	count_enemy(t_game *game)
 {
 	int	i;
@@ -33,6 +39,14 @@ static int	count_enemy(t_game *game)
 	return (count);
 }
 
+/**
+ * @brief Create a enemy object.
+ * 
+ * @param game Game structure.
+ * @param x Horizontal position.
+ * @param y Vertical position.
+ * @return t_enemy* Enemy object.
+ */
 static t_enemy	*create_enemy(t_game *game, int x, int y)
 {
 	t_enemy	*enemy;
@@ -46,6 +60,11 @@ static t_enemy	*create_enemy(t_game *game, int x, int y)
 	return (enemy);
 }
 
+/**
+ * @brief Get the enemies form the map.
+ * 
+ * @param game Game to get the enemies form.
+ */
 static void	get_enemies(t_game *game)
 {
 	int	x;
@@ -71,6 +90,12 @@ static void	get_enemies(t_game *game)
 	game->enemies[index] = NULL;
 }
 
+/**
+ * @brief Create a game object form the given map.
+ * 
+ * @param map Map to create the game from.
+ * @return t_game* Game object.
+ */
 t_game	*create_game(t_map *map)
 {
 	t_game	*game;

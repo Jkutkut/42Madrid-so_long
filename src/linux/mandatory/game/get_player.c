@@ -6,12 +6,17 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 20:19:15 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 20:49:30 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:18:12 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game.h"
 
+/**
+ * @brief Get the player form the map.
+ * 
+ * @param game Game structure.
+ */
 void	get_player(t_game *game)
 {
 	int	i;
@@ -28,8 +33,7 @@ void	get_player(t_game *game)
 				game->player.x = j;
 				game->player.y = i;
 				game->map->map[i][j] = '0';
-				i = game->map->height;
-				j = game->map->width;
+				return ;
 			}
 			j++;
 		}
