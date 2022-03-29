@@ -6,12 +6,19 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 19:44:36 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 17:13:34 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:24:27 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_ui.h"
 
+/**
+ * @brief Shows the cell represented by the given coordinates.
+ * 
+ * @param x Horizontal coordinate.
+ * @param y Vertical coordinate.
+ * @param game Game playing.
+ */
 void	show_cell(int x, int y, t_game *game)
 {
 	if (game->map->map[y][x] == '0')

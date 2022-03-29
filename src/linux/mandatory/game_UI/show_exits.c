@@ -1,37 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_moves_bonus.c                               :+:      :+:    :+:   */
+/*   show_exits.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 19:02:03 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/20 18:56:42 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/29 20:14:34 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_ui.h"
 
 /**
- * @brief Shows on screen the number of moves made by the player.
+ * @brief Show the exits on the game board.
+ * This function is executed when the player has all the coins.
  * 
  * @param game Game playing.
  */
-void	update_moves(t_game *game)
+void	show_exits(t_game *game)
 {
-	static int	moves = 0;
-	int			m;
-	int			i;
-	char		moves_str[] = "Moves:     ";
+	int	i;
+	int	j;
 
-	m = ++moves;
-	i = 11;
-	while (m != 0)
+	j = 0;
+	while (j < game->map->height)
 	{
-		moves_str[i--] = m % 10 + '0';
-		m /= 10;
+		i = 0;
+		while (i < game->map->width)
+		{
+			if (game->map->map[j][i] == 'E')
+				show_cell(i, j, game);
+			i++;
+		}
+		j++;
 	}
-	show_img(game->imgenv[ENV_C_TL], 0, 0, game);
-	show_cell(1, 0, game);
-	mlx_string_put(game->mlx, game->win, 10, 20, 0xFFFFFF, moves_str);
 }

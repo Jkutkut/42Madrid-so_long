@@ -1,25 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   update_moves.c                                     :+:      :+:    :+:   */
+/*   update_moves_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 18:50:32 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:12:24 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_ui.h"
 
+/**
+ * @brief Function colled when the player makes a move. Updates the number
+ * of moves on the stdout.
+ * 
+ * @param game Game playing.
+ */
 void	update_moves(t_game *game)
 {
 	static int	moves = 0;
+	int			m;
+	int			i;
+	char		moves_str[] = "Moves:     ";
 
-	if (moves++ > 0)
-		ft_putchar_fd('\r', 1);
-	(void) game->coins;
-	ft_putstr_fd("Moves: ", 1);
-	ft_putnbr_fd(moves, 1);
-	fflush(stdout);
+	m = ++moves;
+	i = 11;
+	while (m != 0)
+	{
+		moves_str[i--] = m % 10 + '0';
+		m /= 10;
+	}
+	show_img(game->imgenv[ENV_C_TL], 0, 0, game);
+	show_cell(1, 0, game);
+	mlx_string_put(game->mlx, game->win, 10, 20, 0xFFFFFF, moves_str);
 }

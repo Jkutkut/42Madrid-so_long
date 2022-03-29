@@ -6,17 +6,22 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:04:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/21 17:12:15 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 20:23:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_ui.h"
 
-void	show_enemy(t_game *game, int x, int y)
+static void	show_enemy(t_game *game, int x, int y)
 {
 	show_entity(game->imgenemy[game->e_index], x, y, game);
 }
 
+/**
+ * @brief Show the enemies on the game board.
+ * 
+ * @param game Game playing.
+ */
 void	show_enemies(t_game *game)
 {
 	int	i;
