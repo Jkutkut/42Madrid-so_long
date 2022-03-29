@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 22:02:38 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 16:49:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,14 +18,11 @@
 
 # include "../so_long.h"
 
-#  define REQUIRED_ELEMENTS "CEP"
+# define REQUIRED_ELEMENTS "CEP"
 
-# ifndef BONUS
-#  define BONUS 0
+#ifndef ALL_ELEMENTS
 #  define ALL_ELEMENTS "10CEP"
-# else
-#  define ALL_ELEMENTS "10CEPF"
-# endif
+#endif
 
 # define BUFFER_SIZE 1024
 

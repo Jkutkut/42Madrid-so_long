@@ -47,7 +47,6 @@ GAME_UI			=	load_imgs.c \
 					show_entity.c \
 					show_exits.c \
 					show_img.c \
-					show_level.c \
 					show_wall.c
 
 MAP				=	check_map_filename.c \
@@ -76,11 +75,15 @@ COMMON			=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
 
 MANDATORY_ONLY	=	game/create_game.c \
 					game_control/move_player.c \
+					game_UI/show_level.c \
 					game_UI/update_moves.c
 BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
 
 BINS_MANDATORY	=	${COMMON} \
 					${MANDATORY_ONLY:%.c=bin/%.o}
+
+BINS_BONUS		=	${COMMON} \
+					${BONUS_ONLY:%.c=bin/%.o}
 
 MAIN_SRC		=	src/so_long.c
 MAIN_BIN		=	${MAIN_SRC:src/%.c=bin/%.o}
@@ -98,7 +101,7 @@ $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	@make MANDATORY_ONLY="${BONUS_ONLY}" DEFINES="$(DEFINES) -D BONUS=1"
+	@make BINS_MANDATORY="${BINS_BONUS}" MAIN_SRC="${MAIN_SRC:src/%.c=bin/%_bonus.o}" #DEFINES='${DEFINES} -D ALL_ELEMENTS="10CEPF"'
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
