@@ -1,32 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   freemap.c                                          :+:      :+:    :+:   */
+/*   print_map.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 13:08:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/12 13:32:42 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 18:35:23 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/29 22:13:28 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools.h"
 
-void	freemap(t_map *m)
+/**
+ * @brief Prints the given map on screen.
+ * 
+ * @param m Map to print.
+ */
+void	print_map(t_map *m)
 {
 	int	i;
+	int	j;
 
 	i = 0;
-	if (!m)
-		return ;
-	if (m->map)
+	while (i < m->height)
 	{
-		while (i < m->height)
+		j = 0;
+		while (j < m->width)
 		{
-			free(m->map[i]);
-			i++;
+			if (m->map[i][j] == '0')
+				ft_putchar_fd(' ', 1);
+			else if (m->map[i][j] == '1')
+				ft_putchar_fd('#', 1);
+			else if (m->map[i][j] == 'C')
+				ft_putchar_fd('.', 1);
+			else
+				ft_putchar_fd(m->map[i][j], 1);
+			j++;
 		}
-		free(m->map);
+		ft_putchar_fd('\n', 1);
+		i++;
 	}
-	free(m);
 }
