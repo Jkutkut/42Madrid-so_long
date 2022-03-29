@@ -6,12 +6,19 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:23:59 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:15:50 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:03:39 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
+/**
+ * @brief Attempt to move the player to a given position.
+ * 
+ * @param dx Horizontal increment.
+ * @param dy Vertical increment.
+ * @param game Game structure.
+ */
 void	move_player(int dx, int dy, t_game *game)
 {
 	if (!can_move_there(dx, dy, game))

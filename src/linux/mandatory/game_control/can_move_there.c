@@ -6,12 +6,20 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:24:29 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:21:48 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:00:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
+/**
+ * @brief Whenever a player can move to a given position.
+ * 
+ * @param x Horizonal position.
+ * @param y Vertical position.
+ * @param game Game structure.
+ * @return int 1 if the player can move to the given position, 0 otherwise.
+ */
 int	can_move_there(int x, int y, t_game *game)
 {
 	int	new_x;

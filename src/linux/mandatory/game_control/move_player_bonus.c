@@ -6,13 +6,22 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:15:21 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 22:05:36 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
-int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
+/**
+ * @brief Attemps to move the given enemy.
+ * 
+ * @param enemy Enemy to move.
+ * @param dx Horizontal increment.
+ * @param dy Vertical increment.
+ * @param game Game structure.
+ * @return int 1 if the enemy can move to the given position, 0 otherwise.
+ */
+static int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 {
 	int	new_x;
 	int	new_y;
@@ -45,7 +54,12 @@ int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 	return (1);
 }
 
-void	update_enemies(t_game *game)
+/**
+ * @brief Updates the position of enemies.
+ * 
+ * @param game Game structure.
+ */
+static void	update_enemies(t_game *game)
 {
 	int	i;
 
@@ -61,6 +75,13 @@ void	update_enemies(t_game *game)
 	}
 }
 
+/**
+ * @brief Attempt to move the player to a given position.
+ * 
+ * @param dx Horizontal increment.
+ * @param dy Vertical increment.
+ * @param game Game structure.
+ */
 void	move_player(int dx, int dy, t_game *game)
 {
 	int	i;

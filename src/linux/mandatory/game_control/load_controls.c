@@ -1,28 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_press.c                                        :+:      :+:    :+:   */
+/*   load_controls.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:13:34 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/19 13:36:10 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/29 22:05:57 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control.h"
 
-int	key_press(int keycode, t_game *game)
+/**
+ * @brief Loads the controls for the game.
+ * 
+ * @param game Game to load the controls to.
+ */
+void	load_controls(t_game *game)
 {
-	if (keycode == KEY_ESC)
-		close_game(game);
-	else if (keycode == KEY_W || keycode == KEY_UP)
-		move_player(0, -1, game);
-	else if (keycode == KEY_A || keycode == KEY_LEFT)
-		move_player(-1, 0, game);
-	else if (keycode == KEY_S || keycode == KEY_DOWN)
-		move_player(0, 1, game);
-	else if (keycode == KEY_D || keycode == KEY_RIGHT)
-		move_player(1, 0, game);
-	return (0);
+	mlx_hook(game->win, 2, 1L << 0, key_press, game);
+	mlx_hook(game->win, 17, 1L << 17, close_game, game);
 }
