@@ -26,7 +26,7 @@ ifeq ($(OS), Darwin)
 	DOT_O_FLAGS		=	-Imlx_mac
 else
 	CODE_TYPE		=	linux
-	MINILIBX		=	mlx
+	MINILIBX		=	src/mlx
 	MINILIBX_FLAGS	=	$(MINILIBX)/libmlx.a -lXext -lX11
 endif
 
