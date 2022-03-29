@@ -20,25 +20,26 @@ OS			=	$(shell uname -s)
 LIBFT			=	src/libft/libft.a
 
 ifeq ($(OS), Darwin)
+	CODE_TYPE		=	mac
 	MINILIBX		=	mlx_mac
 	MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
 	DOT_O_FLAGS		=	-Imlx_mac
-	DEFINES			=	-D MAC=1
 else
+	CODE_TYPE		=	linux
 	MINILIBX		=	mlx
-	#MINILIBX		=	mlx_linux
 	MINILIBX_FLAGS	=	$(MINILIBX)/libmlx.a -lXext -lX11
-	DEFINES			=	-D LINUX=1
 endif
 
 # Binaries variables
-GAME			=	get_player.c
+GAME			=	create_game.c \
+					get_player.c
 
 GAME_CONTROL	=	can_move_there.c \
 					close_game.c \
 					collect_coin.c \
 					key_press.c \
-					load_controls.c
+					load_controls.c \
+					move_player.c
 
 GAME_UI			=	load_imgs.c \
 					show_border.c \
@@ -47,7 +48,9 @@ GAME_UI			=	load_imgs.c \
 					show_entity.c \
 					show_exits.c \
 					show_img.c \
-					show_wall.c
+					show_level.c \
+					show_wall.c \
+					update_moves.c
 
 MAP				=	check_map_filename.c \
 					check_unique_player.c \
@@ -66,47 +69,34 @@ TOOLS			=	end.c \
 					ft_strextend.c \
 					print_map.c
 
-COMMON			=	${SRCS_MANDATORY:src/%.c=bin/%.o} \
-					${GAME:%.c=bin/game/%.o} \
-					${GAME_CONTROL:%.c=bin/game_control/%.o} \
-					${GAME_UI:%.c=bin/game_UI/%.o} \
-					${MAP:%.c=bin/map/%.o} \
-					${TOOLS:%.c=bin/tools/%.o}
+COMMON			=	so_long.c \
+					${GAME:%=game/%} \
+					${GAME_CONTROL:%=game_control/%} \
+					${GAME_UI:%=game_UI/%} \
+					${MAP:%=map/%} \
+					${TOOLS:%=tools/%}
 
-MANDATORY_ONLY	=	game/create_game.c \
-					game_control/move_player.c \
-					game_UI/show_level.c \
-					game_UI/update_moves.c
-BONUS_ONLY		=	${MANDATORY_ONLY:%.c=%_bonus.c}
+SRCS			=	${COMMON:%.c=src/${CODE_TYPE}/mandatory/%.c}
 
-BINS_MANDATORY	=	${COMMON} \
-					${MANDATORY_ONLY:%.c=bin/%.o}
-
-BINS_BONUS		=	${COMMON} \
-					${BONUS_ONLY:%.c=bin/%.o}
-
-MAIN_SRC		=	src/so_long.c
-MAIN_BIN		=	${MAIN_SRC:src/%.c=bin/%.o}
-
-MANDATORY		=	$(MAIN_BIN) $(BINS_MANDATORY) 
+BINS			=	${SRCS:src/%.c=bin/%.o}
 
 NAME			=	$(MANDATORY_EXE)
 
 # Triggers
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(MANDATORY)
+$(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(BINS)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}$(NAME)${NC}\c"
-	@$(COMPILE) $(MANDATORY) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@$(COMPILE) $(BINS) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	@make BINS_MANDATORY="${BINS_BONUS}" MAIN_SRC="${MAIN_SRC:src/%.c=bin/%_bonus.o}" #DEFINES='${DEFINES} -D ALL_ELEMENTS="10CEPF"'
+	@#make BINS_MANDATORY="${BINS_BONUS}" MAIN_SRC="${MAIN_SRC:src/%.c=bin/%_bonus.o}" #DEFINES='${DEFINES} -D ALL_ELEMENTS="10CEPF"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
 	@mkdir -p $(dir $@)
-	@$(COMPILE) $(DOT_O_FLAGS) $(DEFINES) -c $< -o $@
+	@$(COMPILE) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
 $(MINILIBX)/libmlx.a:

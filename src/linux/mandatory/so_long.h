@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:06:02 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/29 23:04:46 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 
 // C libraries
 # ifdef LINUX
-#  include "../mlx/mlx.h"
+#  include "../../mlx/mlx.h"
 #  include "../mlx/mlx_int.h"
 #  define GAME_NAME "so_long Linux"
 #  define MAX_WIDTH 29
