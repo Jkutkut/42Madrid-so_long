@@ -4,6 +4,7 @@
 
 ## ThingsToDo:
 - mlx name based on bonus
+- put pixel should put on img, not directly on canvas
 - End without leaks -> clean_end
   - Invalid map
   - Inconsistent map
