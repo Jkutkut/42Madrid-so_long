@@ -6,12 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/06 12:04:05 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 19:56:12 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:32:33 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef MAP_H
-# define MAP_H
+#ifndef MAP_BONUS_H
+# define MAP_BONUS_H
 
 # include <fcntl.h>
 # include <unistd.h>
@@ -32,6 +32,6 @@ int		count_coins(t_map *map);
 t_map	*create_map(char **m);
 int		endswith(char *str, char *end);
 char	**load_map(char *filename);
-int		map_contains(t_map *m, char c);
+int		map_contains(t_map *m, char *str);
 
 #endif

@@ -7,7 +7,8 @@ YELLOW='\033[1;33m';
 GREEN='\033[1;32m';
 BLUE='\033[1;34m';
 
-make &&
+# make &&
+make bonus &&
 
 for i in $(ls maps/invalid/*.ber); do
 	f=$(basename $i | sed 's/\.ber//' | sed 's/invalid_//');

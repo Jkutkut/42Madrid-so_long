@@ -6,11 +6,35 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 19:27:35 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:57:36 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:45:11 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "map.h"
+
+/**
+ * @brief If a matrix has the given char
+ * 
+ * @param m Char matrix to check
+ * @param c Char to check
+ * @return int 1 if found, else 0
+ */
+static int	matrix_hasany(char **m, char c)
+{
+	int	i;
+	int	j;
+
+	i = 0;
+	while (m[i])
+	{
+		j = 0;
+		while (m[i][j])
+			if (m[i][j++] == c)
+				return (1);
+		i++;
+	}
+	return (0);
+}
 
 /**
  * @brief If the given map contains all elements in the given String.
@@ -21,27 +45,8 @@
  */
 int	map_contains(t_map *m, char *str)
 {
-	int	c;
-	int	i;
-	int	j;
-
-	i = 0;
-	c = 0;
-	while (str[c])
-	{
-		while (m->map[i])
-		{
-			j = 0;
-			while (m->map[i][j])
-				if (m->map[i][j++] == str[c])
-					break ;
-			if (m->map[i][j] == str[c])
-				break ;
-			i++;
-		}
-		if (!m->map[i])
+	while (*str)
+		if (!matrix_hasany(m->map, *str++))
 			return (0);
-		c++;
-	}
 	return (1);
 }
