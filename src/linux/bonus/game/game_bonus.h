@@ -6,12 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:30:10 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 19:56:04 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
+#ifndef GAME_BONUS_H
+# define GAME_BONUS_H
 
 # include "../so_long_bonus.h"
 

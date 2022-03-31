@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 17:27:53 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 17:56:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,8 +66,6 @@ void	check_update_map(t_map *m)
 		i++;
 	}
 	m->height = i;
-	if (m->width > MAX_WIDTH || m->height > MAX_HEIGHT)
-		free_map_end(m, 1, ERROR_MAP_BIG);
 	if (m->width > MAX_WIDTH || m->height > MAX_HEIGHT)
 		free_map_end(m, 1, ERROR_MAP_BIG);
 	check_border_lines(m);

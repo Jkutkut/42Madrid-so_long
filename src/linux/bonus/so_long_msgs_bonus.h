@@ -6,12 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:04:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 19:35:17 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 19:50:39 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_MSGS_BONUS_H
-#define SO_LONG_MSGS_BONUS_H
+# define SO_LONG_MSGS_BONUS_H
 
 # define ERROR_INVALID_ARGS "Invalid number of arguments.\n"
 # define ERROR_MALLOC "Malloc failed\n"

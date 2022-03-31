@@ -6,12 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 14:35:09 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:34:12 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#ifndef TOOLS_BONUS_H
+# define TOOLS_BONUS_H
 
 # include <stdlib.h>
 

@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_control.h                                     :+:      :+:    :+:   */
+/*   game_control_bonus.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:16:03 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 13:34:29 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 19:49:25 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_CONTROL_H
-# define GAME_CONTROL_H
+#ifndef GAME_CONTROL_BONUS_H
+# define GAME_CONTROL_BONUS_H
 
 # include "../so_long_bonus.h"
 

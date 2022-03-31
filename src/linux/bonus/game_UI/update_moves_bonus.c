@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 12:15:12 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 20:28:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,9 @@ void	update_moves(t_game *game)
 	static int	moves = 0;
 	int			m;
 	int			i;
-	char		moves_str[] = "Moves:     ";
+	char		moves_str[12];
 
+	ft_strlcat(moves_str, "Moves:     ", 12);
 	m = ++moves;
 	i = 11;
 	while (m != 0)
