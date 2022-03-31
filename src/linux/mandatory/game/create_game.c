@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:18:43 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 15:42:44 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ t_game	*create_game(t_map *map)
 		return (NULL);
 	game->map = map;
 	game->coins = count_coins(map);
-	game->p_index = 0;
 	get_player(game);
 	game->mlx = mlx_init();
 	game->win = mlx_new_window(game->mlx,

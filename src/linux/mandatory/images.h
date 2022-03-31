@@ -6,20 +6,14 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:34:24 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:27:22 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 15:40:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMAGES_H
 # define IMAGES_H
 
-# define IMG_IND "0.xpm"
-
-# define PLAYER_SRC_BASE "./res/cat/cat00.xpm"
-# define P_ANI 8
-
-# define ENEMY_SRC_BASE "./res/enemy/enemy00.xpm"
-# define E_ANI 4
+# define PLAYER_SRC "./res/cat/cat01.xpm"
 
 # ifndef COIN_SRC
 #  define COIN_SRC "./res/env/C/key01.xpm"

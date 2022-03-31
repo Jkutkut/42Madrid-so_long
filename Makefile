@@ -44,7 +44,6 @@ GAME_CONTROL	=	can_move_there.c \
 GAME_UI			=	load_imgs.c \
 					show_border.c \
 					show_cell.c \
-					show_enemies.c \
 					show_entity.c \
 					show_exits.c \
 					show_img.c \
@@ -77,8 +76,11 @@ COMMON			=	so_long.c \
 					${MAP:%=map/%} \
 					${TOOLS:%=tools/%}
 
+BONUS_ONLY		=	game_UI/show_enemies.c
+
 SRCS			=	${COMMON:%.c=src/${CODE_TYPE}/mandatory/%.c}
-SRCS_BONUS		=	${COMMON:%.c=src/${CODE_TYPE}/bonus/%_bonus.c}
+SRCS_BONUS		=	${COMMON:%.c=src/${CODE_TYPE}/bonus/%_bonus.c} \
+					${BONUS_ONLY:%.c=src/${CODE_TYPE}/bonus/%_bonus.c}
 
 BINS			=	${SRCS:src/%.c=bin/%.o}
 BINS_BONUS		=	${SRCS_BONUS:src/%.c=bin/%.o}
