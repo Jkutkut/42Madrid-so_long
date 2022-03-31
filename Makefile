@@ -78,8 +78,10 @@ COMMON			=	so_long.c \
 					${TOOLS:%=tools/%}
 
 SRCS			=	${COMMON:%.c=src/${CODE_TYPE}/mandatory/%.c}
+SRCS_BONUS		=	${COMMON:%.c=src/${CODE_TYPE}/bonus/%_bonus.c}
 
 BINS			=	${SRCS:src/%.c=bin/%.o}
+BINS_BONUS		=	${SRCS_BONUS:src/%.c=bin/%.o}
 
 NAME			=	$(MANDATORY_EXE)
 
@@ -92,7 +94,7 @@ $(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(BINS)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
-	@#make BINS_MANDATORY="${BINS_BONUS}" MAIN_SRC="${MAIN_SRC:src/%.c=bin/%_bonus.o}" #DEFINES='${DEFINES} -D ALL_ELEMENTS="10CEPF"
+	@make BINS="${BINS_BONUS}"
 
 bin/%.o: src/%.c
 	@echo "- ${TITLE}Compiling${NC} $< -> $@\c"
