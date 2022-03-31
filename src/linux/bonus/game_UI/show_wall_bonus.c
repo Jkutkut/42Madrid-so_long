@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 17:41:06 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:12:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:37:20 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 /**
  * @brief Detects the correct sprite to show on the given wall.

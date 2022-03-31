@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 17:44:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:25:08 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 11:47:59 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 /**
  * @brief Show on screen the border of the given game.

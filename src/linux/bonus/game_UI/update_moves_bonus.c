@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:12:24 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:15:12 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 /**
  * @brief Function colled when the player makes a move. Updates the number

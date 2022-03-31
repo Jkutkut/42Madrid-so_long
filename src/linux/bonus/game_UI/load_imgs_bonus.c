@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/28 13:38:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:14:05 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 /**
  * @brief Load the given image into the game.

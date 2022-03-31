@@ -1,38 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_exits.c                                       :+:      :+:    :+:   */
+/*   show_player.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 18:56:42 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:14:34 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/30 20:29:12 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 12:11:55 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 /**
- * @brief Show the exits on the game board.
- * This function is executed when the player has all the coins.
+ * @brief Show the player in the given position.
  * 
- * @param game Game playing.
+ * @param game The game.
  */
-void	show_exits(t_game *game)
+void	show_player(t_game *game)
 {
-	int	i;
-	int	j;
-
-	j = 0;
-	while (j < game->map->height)
-	{
-		i = 0;
-		while (i < game->map->width)
-		{
-			if (game->map->map[j][i] == 'E')
-				show_cell(i, j, game);
-			i++;
-		}
-		j++;
-	}
+	show_entity(game->imgplayer[game->p_index], game->player.x, game->player.y, game);
 }

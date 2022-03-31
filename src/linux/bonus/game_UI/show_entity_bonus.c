@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   show_entity.c                                      :+:      :+:    :+:   */
+/*   show_entity_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/30 20:29:18 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:11:34 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_ui.h"
+#include "game_ui_bonus.h"
 
 unsigned int	mlx_get_pixel(t_img *img, int x, int y)
 {
