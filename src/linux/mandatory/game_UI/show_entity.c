@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:17:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/30 20:29:18 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,11 +21,6 @@ unsigned int	mlx_get_pixel(t_img *img, int x, int y)
 unsigned int	mlx_rgb_to_int(int r, int g, int b)
 {
 	return (r << 16 | g << 8 | b);
-}
-
-void	show_player(t_game *game)
-{
-	show_entity(game->imgplayer[game->p_index], game->player.x, game->player.y, game);
 }
 
 /**

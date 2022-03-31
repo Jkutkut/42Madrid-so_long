@@ -4,8 +4,8 @@
 
 ## ThingsToDo:
 - Freeend on create_game
-- mlx name based on bonus
 - put pixel should put on img, not directly on canvas
+- mandatory with only one img
 - End without leaks -> clean_end
   - Invalid map
   - Inconsistent map
