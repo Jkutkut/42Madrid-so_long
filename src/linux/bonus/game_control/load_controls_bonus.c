@@ -1,42 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   get_player.c                                       :+:      :+:    :+:   */
+/*   load_controls_bonus.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/20 20:19:15 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 12:26:58 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/19 13:36:10 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 14:33:59 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_bonus.h"
+#include "game_control_bonus.h"
 
 /**
- * @brief Get the player form the map.
+ * @brief Loads the controls for the game.
  * 
- * @param game Game structure.
+ * @param game Game to load the controls to.
  */
-void	get_player(t_game *game)
+void	load_controls(t_game *game)
 {
-	int	i;
-	int	j;
-
-	i = 0;
-	while (i < game->map->height)
-	{
-		j = 0;
-		while (j < game->map->width)
-		{
-			if (game->map->map[i][j] == 'P')
-			{
-				game->player.x = j;
-				game->player.y = i;
-				game->map->map[i][j] = '0';
-				return ;
-			}
-			j++;
-		}
-		i++;
-	}
+	mlx_hook(game->win, 2, 1L << 0, key_press, game);
+	mlx_hook(game->win, 17, 1L << 17, close_game, game);
 }

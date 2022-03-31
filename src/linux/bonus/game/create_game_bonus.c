@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 10:44:55 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 12:26:49 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game.h"
+#include "game_bonus.h"
 
 /**
  * @brief Counts the number of enemies in the map.

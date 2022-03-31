@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   can_move_there.c                                   :+:      :+:    :+:   */
+/*   can_move_there_bonus.c                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:24:29 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:00:53 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:54:59 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control.h"
+#include "game_control_bonus.h"
 
 /**
  * @brief Whenever a player can move to a given position.

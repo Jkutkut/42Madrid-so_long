@@ -1,21 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game.h                                             :+:      :+:    :+:   */
+/*   close_game_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 20:49:27 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/19 13:37:21 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 14:55:21 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
+#include "game_control_bonus.h"
 
-# include "../so_long.h"
-
-t_game	*create_game(t_map *map);
-void	get_player(t_game *game);
-
-#endif
+/**
+ * @brief Function used to close the game.
+ * 
+ * @param game Game structure.
+ * @return int Value to return for the mlx function.
+ */
+int	close_game(t_game *game)
+{
+	freeend(0, MSG_ENDGAME, game);
+	return (0);
+}

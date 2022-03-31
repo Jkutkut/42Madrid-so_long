@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:05:36 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:54:26 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control.h"
+#include "game_control_bonus.h"
 
 /**
  * @brief Attemps to move the given enemy.

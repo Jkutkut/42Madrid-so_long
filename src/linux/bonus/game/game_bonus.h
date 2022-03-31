@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   tools.h                                            :+:      :+:    :+:   */
+/*   game_bonus.h                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/20 13:25:48 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 12:27:09 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef TOOLS_H
-# define TOOLS_H
+#ifndef GAME_H
+# define GAME_H
 
-# include <stdlib.h>
+# include "../so_long_bonus.h"
 
-# include "../so_long.h"
-
-void	end(int endtype, char *msg);
-void	freearray(char **array);
-void	freeend(int endtype, char *msg, t_game *game);
-void	freemap(t_map *m);
-void	ft_strextend(char **s1, char *s2);
-void	print_map(t_map *m);
+t_game	*create_game(t_map *map);
+void	get_player(t_game *game);
 
 #endif

@@ -6,14 +6,14 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:16:03 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:06:34 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:34:29 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef GAME_CONTROL_H
 # define GAME_CONTROL_H
 
-# include "../so_long.h"
+# include "../so_long_bonus.h"
 
 # define KEY_ESC 65307
 # define KEY_W 119

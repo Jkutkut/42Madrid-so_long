@@ -1,24 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_controls.c                                    :+:      :+:    :+:   */
+/*   tools_bonus.h                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:36:10 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:05:57 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 14:35:09 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control.h"
+#ifndef TOOLS_H
+# define TOOLS_H
 
-/**
- * @brief Loads the controls for the game.
- * 
- * @param game Game to load the controls to.
- */
-void	load_controls(t_game *game)
-{
-	mlx_hook(game->win, 2, 1L << 0, key_press, game);
-	mlx_hook(game->win, 17, 1L << 17, close_game, game);
-}
+# include <stdlib.h>
+
+# include "../so_long_bonus.h"
+
+void	end(int endtype, char *msg);
+void	freearray(char **array);
+void	freeend(int endtype, char *msg, t_game *game);
+void	freemap(t_map *m);
+void	ft_strextend(char **s1, char *s2);
+void	print_map(t_map *m);
+
+#endif

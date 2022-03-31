@@ -6,11 +6,11 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:52:34 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 16:29:02 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 13:34:17 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "so_long_bonus.h"
 
 // void	check_leaks(void)
 // {
@@ -18,7 +18,7 @@
 // }
 // atexit(check_leaks);
 
-int	update_game(t_game *game)
+static int	update_game(t_game *game)
 {
 	static int	i = 0;
 	if (i++ == 10000)

@@ -1,16 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   collect_coin.c                                     :+:      :+:    :+:   */
+/*   collect_coin_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 12:08:52 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 22:03:05 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/03/31 14:55:10 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control.h"
+#include "game_control_bonus.h"
 
 /**
  * @brief Removes the coin from the map, updating the game.
