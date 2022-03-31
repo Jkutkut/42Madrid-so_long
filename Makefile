@@ -76,7 +76,10 @@ COMMON			=	so_long.c \
 					${MAP:%=map/%} \
 					${TOOLS:%=tools/%}
 
-BONUS_ONLY		=	game_UI/show_enemies.c
+BONUS_ONLY		=	game/count_enemy.c \
+					game/create_enemy.c \
+					game/get_enemies.c \
+					game_UI/show_enemies.c
 
 SRCS			=	${COMMON:%.c=src/${CODE_TYPE}/mandatory/%.c}
 SRCS_BONUS		=	${COMMON:%.c=src/${CODE_TYPE}/bonus/%_bonus.c} \

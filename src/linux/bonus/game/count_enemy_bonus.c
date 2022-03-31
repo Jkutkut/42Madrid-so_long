@@ -1,24 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   game_bonus.h                                       :+:      :+:    :+:   */
+/*   count_enemy_bonus.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/12 13:35:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 16:30:10 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/03/31 16:24:50 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/03/31 16:29:16 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef GAME_H
-# define GAME_H
+#include "game_bonus.h"
 
-# include "../so_long_bonus.h"
+/**
+ * @brief Counts the number of enemies in the map.
+ * 
+ * @param game Game structure.
+ * @return int Number of enemies.
+ */
+int	count_enemy(t_game *game)
+{
+	int	i;
+	int	j;
+	int	count;
 
-int		count_enemy(t_game *game);
-t_enemy	*create_enemy(t_game *game, int x, int y);
-t_game	*create_game(t_map *map);
-void	get_enemies(t_game *game);
-void	get_player(t_game *game);
-
-#endif
+	i = 0;
+	while (i < game->map->height)
+	{
+		j = 0;
+		while (j < game->map->width)
+		{
+			if (game->map->map[i][j] == 'F')
+				count++;
+			j++;
+		}
+		i++;
+	}
+	return (count);
+}
