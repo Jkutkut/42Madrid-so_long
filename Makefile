@@ -2,7 +2,7 @@
 CC				=	gcc
 FLAGS			=	-Wall -Wextra #-fsanitize=address # -Werror -fsanitize=address
 COMPILE			=	$(CC) $(FLAGS)
-MANDATORY_EXE	=	so_long
+NAME			=	so_long
 
 # Colors:
 NC				=	\033[0m
@@ -19,15 +19,11 @@ OS			=	$(shell uname -s)
 # Libraries
 LIBFT			=	src/libft/libft.a
 
+MINILIBX		=	src/mlx/libmlx42.a
 ifeq ($(OS), Darwin)
-	CODE_TYPE		=	mac
-	MINILIBX		=	mlx_mac
-	MINILIBX_FLAGS	=	-Lmlx_mac -lmlx_mac -framework OpenGL -framework AppKit
-	DOT_O_FLAGS		=	-Imlx_mac
+	MINILIBX_FLAGS	=	-I include -lglfw -L "/Users/${USER}/.brew/opt/glfw/lib/"
 else
-	CODE_TYPE		=	linux
-	MINILIBX		=	src/mlx
-	MINILIBX_FLAGS	=	$(MINILIBX)/libmlx.a -lXext -lX11
+	MINILIBX_FLAGS	=	-I include -ldl -lglfw
 endif
 
 # Binaries variables
@@ -63,37 +59,24 @@ MAP				=	check_map_filename.c \
 					map_contains.c
 
 TOOLS			=	end.c \
-					freearray.c \
-					freeend.c \
 					freemap.c \
 					ft_strextend.c \
 					print_map.c
 
 COMMON			=	so_long.c \
-					${GAME:%=game/%} \
-					${GAME_CONTROL:%=game_control/%} \
-					${GAME_UI:%=game_UI/%} \
 					${MAP:%=map/%} \
 					${TOOLS:%=tools/%}
 
-BONUS_ONLY		=	game/count_enemy.c \
-					game/create_enemy.c \
-					game/get_enemies.c \
-					game_UI/show_enemies.c
-
-SRCS			=	${COMMON:%.c=src/${CODE_TYPE}/mandatory/%.c}
-SRCS_BONUS		=	${COMMON:%.c=src/${CODE_TYPE}/bonus/%_bonus.c} \
-					${BONUS_ONLY:%.c=src/${CODE_TYPE}/bonus/%_bonus.c}
+SRCS			=	${COMMON:%.c=src/mandatory/%.c}
+SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c}
 
 BINS			=	${SRCS:src/%.c=bin/%.o}
 BINS_BONUS		=	${SRCS_BONUS:src/%.c=bin/%.o}
 
-NAME			=	$(MANDATORY_EXE)
-
 # Triggers
 all: $(NAME)
 
-$(NAME): $(LIBFT) $(MINILIBX)/libmlx.a $(BINS)
+$(NAME): $(LIBFT) $(MINILIBX) $(BINS)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}$(NAME)${NC}\c"
 	@$(COMPILE) $(BINS) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
@@ -107,9 +90,9 @@ bin/%.o: src/%.c
 	@$(COMPILE) -c $< -o $@
 	@echo " ${GREEN}[OK]${NC}"
 
-$(MINILIBX)/libmlx.a:
+$(MINILIBX):
 	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
-	@make -s -C $(MINILIBX)
+	@make -s -C $(dir $(MINILIBX))
 	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
 
 $(LIBFT):
@@ -124,11 +107,11 @@ clean:
 	@echo "${RED}Removing${NC} ${YELLOW}Libft${NC} binaries"
 	@make -C $(dir $(LIBFT)) fclean BIN="../../bin/libft"
 	@echo "${RED}Removing${NC} ${YELLOW}MINILIBX${NC} binaries"
-	@make -C $(MINILIBX) clean
+	@make -C $(dir $(MINILIBX)) clean
 	@echo "${RED}Removing${NC} binary directory"
 	@rm -rf ./bin
 
 fclean: clean
-	@echo "${RED}Removing${NC} $(MANDATORY_EXE) $(BONUS_EXE)"
-	@rm -f $(MANDATORY_EXE) $(BONUS_EXE)
+	@echo "${RED}Removing${NC} $(NAME) $(BONUS_EXE)"
+	@rm -f $(NAME)
 	@echo "Project now ${GREEN}clean${NC}."
