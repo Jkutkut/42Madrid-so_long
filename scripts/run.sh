@@ -11,7 +11,7 @@ runleak() {
 make
 clear
 if [ "$1" = "n" ]; then
-	./so_long maps/map_subject_02.ber ||
+	../so_long maps/map_subject_02.ber ||
 	echo "Error"
 else
 	runleak so_long maps/map_subject_01.ber

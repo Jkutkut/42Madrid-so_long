@@ -10,11 +10,11 @@ BLUE='\033[1;34m';
 # make &&
 make bonus &&
 
-for i in $(ls maps/invalid/*.ber); do
+for i in $(ls ../maps/invalid/*.ber); do
 	f=$(basename $i | sed 's/\.ber//' | sed 's/invalid_//');
 	echo "$f: \c"
 
-	result=$(timeout -k9 1 ./so_long $i 2>&1)
+	result=$(timeout -k9 1 ../so_long $i 2>&1)
 	isError=$(echo "$result" | grep "Error")
 	isTimeout=$(echo $result | cat -e)
 	if [ ! "$isError" = "" ]; then
