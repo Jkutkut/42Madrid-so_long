@@ -37,16 +37,6 @@ GAME_CONTROL	=	can_move_there.c \
 					load_controls.c \
 					move_player.c
 
-GAME_UI			=	load_imgs.c \
-					show_border.c \
-					show_cell.c \
-					show_entity.c \
-					show_exits.c \
-					show_img.c \
-					show_level.c \
-					show_player.c \
-					show_wall.c \
-					update_moves.c
 
 MAP				=	check_map_filename.c \
 					check_unique_player.c \
@@ -59,16 +49,25 @@ MAP				=	check_map_filename.c \
 					map_contains.c
 
 TOOLS			=	end.c \
+					freearray.c \
+					freeend.c \
 					freemap.c \
 					ft_strextend.c \
 					print_map.c
 
 COMMON			=	so_long.c \
+					${GAME:%=game/%} \
+					${GAME_UI:%=game_UI/%} \
 					${MAP:%=map/%} \
 					${TOOLS:%=tools/%}
 
+BONUS_ONLY		=	game/count_enemy.c \
+					game/create_enemy.c \
+					game/get_enemies.c
+
 SRCS			=	${COMMON:%.c=src/mandatory/%.c}
-SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c}
+SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c} \
+					${BONUS_ONLY:%.c=src/${CODE_TYPE}/bonus/%_bonus.c}
 
 BINS			=	${SRCS:src/%.c=bin/%.o}
 BINS_BONUS		=	${SRCS_BONUS:src/%.c=bin/%.o}
@@ -78,7 +77,7 @@ all: $(NAME)
 
 $(NAME): $(LIBFT) $(MINILIBX) $(BINS)
 	@echo "\n${TITLE}Compiling${NC} ${YELLOW}$(NAME)${NC}\c"
-	@$(COMPILE) $(BINS) $(LIBFT) $(MINILIBX_FLAGS) -o $(NAME)
+	@$(COMPILE) $(BINS) $(LIBFT) $(MINILIBX) $(MINILIBX_FLAGS) -o $(NAME)
 	@echo " ${GREEN}[OK]${NC}\n"
 
 bonus:
