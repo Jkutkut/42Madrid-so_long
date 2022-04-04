@@ -1,5 +1,5 @@
 //#include "MLX42/MLX42.h"
-#include "../MLX42/include/MLX42/MLX42.h"
+#include "../src/mlx/include/MLX42/MLX42.h"
 #include <stdlib.h>
 #include <stdio.h>
 #include <unistd.h>
@@ -8,6 +8,8 @@
 #define HEIGHT 256
 
 mlx_image_t	*g_img;
+// mlx_texture_t *g_img;
+// xpm_t	*g_img;
 
 void	hook(void *param)
 {
@@ -33,8 +35,9 @@ int32_t	main(void)
 	mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
 	if (!mlx)
 		exit(EXIT_FAILURE);
-	g_img = mlx_new_image(mlx, 128, 128);
-	memset(g_img->pixels, 255, g_img->width * g_img->height * sizeof(int));
+	// g_img = mlx_new_image(mlx, 128, 128);
+	// memset(g_img->pixels, 255, g_img->width * g_img->height * sizeof(int));
+	g_img = mlx_texture_to_image(mlx, mlx_load_png("../res/cat/cat01.png"));
 	mlx_image_to_window(mlx, g_img, 0, 0);
 	mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
