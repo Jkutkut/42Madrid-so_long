@@ -37,10 +37,16 @@ int32_t	main(void)
 		exit(EXIT_FAILURE);
 	// g_img = mlx_new_image(mlx, 128, 128);
 	// memset(g_img->pixels, 255, g_img->width * g_img->height * sizeof(int));
-	g_img = mlx_texture_to_image(mlx, mlx_load_png("../res/cat/cat01.png"));
+	mlx_texture_t *txt = mlx_load_png("../res/cat/cat01.png");
+	g_img = mlx_texture_to_image(mlx, txt);
+	mlx_delete_texture(txt);
 	mlx_image_to_window(mlx, g_img, 0, 0);
 	mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
+	mlx_delete_image(mlx, g_img);
 	mlx_terminate(mlx);
+	// free(mlx);
+	free(g_img);
+	free(txt);
 	return (EXIT_SUCCESS);
 }
