@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/02 16:13:21 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/04 09:47:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,12 +25,12 @@
 # include "../libft/libft.h"
 
 // Declare and structures
-# include "images_bonus.h"
+# include "so_long_images_bonus.h"
 # include "so_long_structs_bonus.h"
 # include "so_long_msgs_bonus.h"
 
 # include "game/game_bonus.h"
-# include "game_control/game_control_bonus.h"
+// # include "game_control/game_control_bonus.h"
 # include "game_UI/game_ui_bonus.h"
 # include "map/map_bonus.h"
 # include "tools/tools_bonus.h"
