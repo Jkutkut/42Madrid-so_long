@@ -11,6 +11,9 @@ mlx_image_t	*g_img;
 // mlx_texture_t *g_img;
 // xpm_t	*g_img;
 
+int32_t i1;
+int32_t i2;
+
 void	hook(void *param)
 {
 	mlx_t	*mlx;
@@ -19,13 +22,22 @@ void	hook(void *param)
 	if (mlx_is_key_down(param, MLX_KEY_ESCAPE))
 		mlx_close_window(param);
 	if (mlx_is_key_down(param, MLX_KEY_UP))
-		g_img->instances[0].y -= 5;
+		g_img->instances[i1].y -= 5;
 	if (mlx_is_key_down(param, MLX_KEY_DOWN))
-		g_img->instances[0].y += 5;
+		g_img->instances[i1].y += 5;
 	if (mlx_is_key_down(param, MLX_KEY_LEFT))
-		g_img->instances[0].x -= 5;
+		g_img->instances[i1].x -= 5;
 	if (mlx_is_key_down(param, MLX_KEY_RIGHT))
-		g_img->instances[0].x += 5;
+		g_img->instances[i1].x += 5;
+
+	if (mlx_is_key_down(param, MLX_KEY_W))
+		g_img->instances[i2].y -= 5;
+	if (mlx_is_key_down(param, MLX_KEY_S))
+		g_img->instances[i2].y += 5;
+	if (mlx_is_key_down(param, MLX_KEY_A))
+		g_img->instances[i2].x -= 5;
+	if (mlx_is_key_down(param, MLX_KEY_D))
+		g_img->instances[i2].x += 5;
 }
 
 int32_t	main(void)
@@ -40,7 +52,10 @@ int32_t	main(void)
 	mlx_texture_t *txt = mlx_load_png("../res/cat/cat01.png");
 	g_img = mlx_texture_to_image(mlx, txt);
 	mlx_delete_texture(txt);
-	mlx_image_to_window(mlx, g_img, 0, 0);
+
+	i1 = mlx_image_to_window(mlx, g_img, 0, 0);
+	i2 = mlx_image_to_window(mlx, g_img, 30, 0);
+	
 	mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
 	mlx_delete_image(mlx, g_img);
