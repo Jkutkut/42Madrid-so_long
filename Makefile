@@ -1,6 +1,6 @@
 # Compiler options
 CC				=	gcc
-FLAGS			=	-Wall -Wextra #-fsanitize=address # -Werror -fsanitize=address
+FLAGS			=	-Wall -Wextra -fsanitize=address # -Werror -fsanitize=address
 COMPILE			=	$(CC) $(FLAGS)
 NAME			=	so_long
 
@@ -29,6 +29,18 @@ endif
 # Binaries variables
 GAME			=	create_game.c \
 					get_player.c
+
+GAME_UI			=	load_imgs.c \
+					show_border.c \
+					show_cell.c \
+					show_enemies.c \
+					show_entity.c \
+					show_exits.c \
+					show_img.c \
+					show_level.c \
+					show_player.c \
+					show_wall.c \
+					update_moves.c
 
 GAME_CONTROL	=	can_move_there.c \
 					close_game.c \
@@ -59,7 +71,9 @@ COMMON			=	so_long.c \
 					${GAME:%=game/%} \
 					${GAME_UI:%=game_UI/%} \
 					${MAP:%=map/%} \
-					${TOOLS:%=tools/%}
+					${TOOLS:%=tools/%} \
+					#${GAME_CONTROL:%=game_UI/%} \
+					
 
 BONUS_ONLY		=	game/count_enemy.c \
 					game/create_enemy.c \
