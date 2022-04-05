@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 19:45:54 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/05 09:16:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,22 +111,24 @@ void	move_player(int dx, int dy, t_game *game)
 
 	if (can_move_there(dx, dy, game))
 	{
-		show_cell(game->player.x, game->player.y, game);
+		// show_cell(game->player.x, game->player.y, game);
 		game->player.x += dx;
 		game->player.y += dy;
 		update_moves(game);
-		if (game->map->map[game->player.y][game->player.x] == 'C')
-			collect_coin(game);
-		if (game->map->map[game->player.y][game->player.x] == 'E')
-			if (game->coins == 0)
-				freeend(0, MSG_WIN, game);
+		game->imgplayer[game->p_index]->instances[0].x += dx * 64;
+		game->imgplayer[game->p_index]->instances[0].y += dy * 64;
+		// if (game->map->map[game->player.y][game->player.x] == 'C')
+		// 	collect_coin(game);
+		// if (game->map->map[game->player.y][game->player.x] == 'E')
+		// 	if (game->coins == 0)
+		// 		freeend(0, MSG_WIN, game);
 	}
-	update_enemies(game);
-	show_enemies(game);
-	show_player(game);
-	i = -1;
-	while (game->enemies[++i])
-		if (game->enemies[i]->x == game->player.x)
-			if (game->enemies[i]->y == game->player.y)
-				freeend(0, MSG_LOSE, game);
+	// update_enemies(game);
+	// show_enemies(game);
+	// show_player(game);
+	// i = -1;
+	// while (game->enemies[++i])
+	// 	if (game->enemies[i]->x == game->player.x)
+	// 		if (game->enemies[i]->y == game->player.y)
+	// 			freeend(0, MSG_LOSE, game);
 }

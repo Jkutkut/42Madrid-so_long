@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:26:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 07:40:47 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/05 10:25:56 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,10 @@
  * @param y Index on the vertical axis.
  * @param game Game to show the img on.
  */
-void	show_img(mlx_image_t *img, int x, int y, t_game *game)
+void	show_img(mlx_image_t *img, int x, int y, int z, t_game *game)
 {
-	mlx_image_to_window(game->mlx, img, x * 64, y * 64);
+	int index;
+
+	index = mlx_image_to_window(game->mlx, img, x * 64, y * 64);
+	img->instances[0].z = z;
 }
