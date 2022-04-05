@@ -69,10 +69,10 @@ TOOLS			=	end.c \
 
 COMMON			=	so_long.c \
 					${GAME:%=game/%} \
+					${GAME_CONTROL:%=game_control/%} \
 					${GAME_UI:%=game_UI/%} \
 					${MAP:%=map/%} \
 					${TOOLS:%=tools/%} \
-					#${GAME_CONTROL:%=game_UI/%} \
 					
 
 BONUS_ONLY		=	game/count_enemy.c \
