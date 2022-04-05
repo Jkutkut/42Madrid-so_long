@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/04 08:40:16 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/05 07:58:40 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,6 @@ static mlx_image_t	*load_png(t_game *game, char *path)
 	}
 	img = mlx_texture_to_image(game->mlx, texture);
 	mlx_delete_texture(texture);
-	free(texture);
 	if (!img)
 	{
 		ft_putstr_fd(ERROR_LOADING_IMG_DETAIL, 2);
