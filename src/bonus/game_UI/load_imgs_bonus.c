@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 07:58:40 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/05 21:31:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,6 +121,6 @@ void	load_imgs(t_game *game)
 {
 	load_players(game);
 	game->imgcoin = load_png(game, COIN_SRC);
-	load_exit(game);
 	load_env(game);
+	load_exit(game);
 }
