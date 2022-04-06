@@ -1,6 +1,6 @@
 # Compiler options
 CC				=	gcc
-FLAGS			=	-Wall -Wextra -fsanitize=address # -Werror -fsanitize=address
+FLAGS			=	-Wall -Wextra #-fsanitize=address # -Werror -fsanitize=address
 COMPILE			=	$(CC) $(FLAGS)
 NAME			=	so_long
 

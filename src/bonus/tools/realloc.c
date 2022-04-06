@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/04 09:21:27 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/04 09:37:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/06 15:37:31 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	*ft_memmove(void *dest, const void *source, size_t n);
 
-void	*realloc(void *p, size_t newSize)
+void	*ft_realloc(void *p, size_t newSize)
 {
 	void *new_p;
 
