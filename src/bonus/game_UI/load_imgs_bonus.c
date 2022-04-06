@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 21:31:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:14:08 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,9 +54,9 @@ static void	load_players(t_game *game)
 	int		i;
 
 	ft_memcpy(path, PLAYER_SRC_BASE, ft_strlen(PLAYER_SRC_BASE) + 1);
-	game->imgplayer = malloc(sizeof(void *) * (P_ANI));
-	if (game->imgplayer == NULL)
-		freeend(1, ERROR_MALLOC, game);
+	// game->imgplayer = malloc(sizeof(void *) * (P_ANI));
+	// if (game->imgplayer == NULL)
+	// 	freeend(1, ERROR_MALLOC, game);
 	i = 0;
 	while (++i <= P_ANI)
 	{
@@ -64,9 +64,9 @@ static void	load_players(t_game *game)
 		game->imgplayer[i - 1] = load_png(game, path);
 	}
 	ft_memcpy(path, ENEMY_SRC_BASE, ft_strlen(ENEMY_SRC_BASE) + 1);
-	game->imgenemy = malloc(sizeof(void *) * (E_ANI));
-	if (game->imgenemy == NULL)
-		freeend(1, ERROR_MALLOC, game);
+	// game->imgenemy = malloc(sizeof(void *) * (E_ANI));
+	// if (game->imgenemy == NULL)
+	// 	freeend(1, ERROR_MALLOC, game);
 	i = 0;
 	while (++i <= E_ANI)
 	{
@@ -82,9 +82,9 @@ static void	load_players(t_game *game)
  */
 static void	load_exit(t_game *game)
 {
-	game->imgexit = malloc(sizeof(void *) * (2));
-	if (game->imgexit == NULL)
-		freeend(1, ERROR_MALLOC, game);
+	// game->imgexit = malloc(sizeof(void *) * (2));
+	// if (game->imgexit == NULL)
+	// 	freeend(1, ERROR_MALLOC, game);
 	game->imgexit[EXIT_O] = load_png(game, EXIT_OPEN_SRC);
 	game->imgexit[EXIT_C] = load_png(game, EXIT_CLOSED_SRC);
 }
@@ -97,9 +97,9 @@ static void	load_exit(t_game *game)
  */
 static void	load_env(t_game *game)
 {
-	game->imgenv = malloc(sizeof(void *) * (ENV_SRCS));
-	if (game->imgenv == NULL)
-		freeend(1, ERROR_MALLOC, game);
+	// game->imgenv = malloc(sizeof(void *) * (ENV_SRCS));
+	// if (game->imgenv == NULL)
+	// 	freeend(1, ERROR_MALLOC, game);
 	game->imgenv[ENV_FLOOR] = load_png(game, ENV_FLOOR_SRC);
 	game->imgenv[ENV_L_T] = load_png(game, ENV_L_T_SRC);
 	game->imgenv[ENV_L_L] = load_png(game, ENV_L_L_SRC);

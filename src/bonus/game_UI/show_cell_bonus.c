@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 19:44:36 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 21:50:25 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:16:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,8 +21,8 @@
  */
 void	show_cell(int x, int y, t_game *game)
 {
-	// if (game->map->map[y][x] == '0' || game->map->map[y][x] == 'C')
-	// 	show_img(game->imgenv[ENV_FLOOR], x, y, 0, game);
+	if (game->map->map[y][x] == '0' || game->map->map[y][x] == 'C')
+		show_img(game->imgenv[ENV_FLOOR], x, y, 0, game);
 	if (game->map->map[y][x] == '1')
 		show_wall(game, x, y);
 	if (game->map->map[y][x] == 'E')
