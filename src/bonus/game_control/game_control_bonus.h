@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:16:03 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 08:16:45 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:27:52 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,8 +26,6 @@
 # define KEY_DOWN 65364
 
 int		can_move_there(int x, int y, t_game *game);
-int		close_game_key(int keycode, t_game *game);
-int		close_game(t_game *game);
 void	collect_coin(t_game *game);
 int		key_press(t_game *game);
 void	load_controls(t_game *game);

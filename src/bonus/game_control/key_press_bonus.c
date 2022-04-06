@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 09:13:47 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/06 09:28:06 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,6 +48,10 @@ int	key_press(t_game *game)
 	{
 		printf("RIGHT\n");
 		move_player(1, 0, game);
+	}
+	else if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+	{
+		freeend(0, MSG_ENDGAME, game);
 	}
 	return (0);
 }
