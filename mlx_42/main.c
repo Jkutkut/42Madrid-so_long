@@ -4,7 +4,7 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <memory.h>
-#define WIDTH 500
+#define WIDTH 512
 #define HEIGHT 256
 
 mlx_image_t	*g_img;
@@ -31,6 +31,18 @@ void	hook(void *param)
 #include "so_long_images.h"
 #include "so_long_structs.h"
 
+static mlx_image_t	*load_png(t_game *game, char *path)
+{
+	int				i;
+	mlx_image_t		*img;
+	mlx_texture_t	*texture;
+
+	texture = mlx_load_png(path);
+	img = mlx_texture_to_image(game->mlx, texture);
+	mlx_delete_texture(texture);
+	return (img);
+}
+
 int32_t	main(void)
 {
 	mlx_t	*mlx;
@@ -51,16 +63,51 @@ int32_t	main(void)
 		mlx_delete_texture(t);
 	}
 
-	strcat(src, "../res/enemy/enemy00.png");
-	for (int i = 0; i < 8; i++) {
+	memmove(src, "../res/enemy/enemy00.png", 25);
+	for (int i = 0; i < 4; i++) {
 		src[19] = '0' + i + 1;
+		printf("%s", src);
+		fflush(stdout);
 		t = mlx_load_png(src);
-		game.imgplayer[i] = mlx_texture_to_image(mlx, t);
+		game.imgenemy[i] = mlx_texture_to_image(mlx, t);
 		mlx_delete_texture(t);
 	}
-	
+
+	t = mlx_load_png("../res/env/C/key01.png");
+	game.imgcoin = mlx_texture_to_image(mlx, t);
+	mlx_delete_texture(t);
+
+	game.imgenv[ENV_FLOOR] = load_png(&game, ENV_FLOOR_SRC);
+	game.imgenv[ENV_L_T] = load_png(&game, ENV_L_T_SRC);
+	game.imgenv[ENV_L_L] = load_png(&game, ENV_L_L_SRC);
+	game.imgenv[ENV_L_R] = load_png(&game, ENV_L_R_SRC);
+	game.imgenv[ENV_L_B] = load_png(&game, ENV_L_B_SRC);
+	game.imgenv[ENV_C_TL] = load_png(&game, ENV_C_TL_SRC);
+	game.imgenv[ENV_C_TR] = load_png(&game, ENV_C_TR_SRC);
+	game.imgenv[ENV_C_BL] = load_png(&game, ENV_C_BL_SRC);
+	game.imgenv[ENV_C_BR] = load_png(&game, ENV_C_BR_SRC);
+	game.imgenv[ENV_WALL] = load_png(&game, ENV_WALL_SRC);
+
+	game.imgexit[0] = load_png(&game, EXIT_OPEN_SRC);
+	game.imgexit[1] = load_png(&game, EXIT_CLOSED_SRC);
+
+
+	// SHOW
 	for (int i = 0; i < 8; i++) {
 		mlx_image_to_window(mlx, game.imgplayer[i], i * 64, 0);
+	}
+	for (int i = 0; i < 4; i++) {
+		mlx_image_to_window(mlx, game.imgenemy[i], i * 64, 64);
+	}
+	mlx_image_to_window(mlx, game.imgcoin, 4 * 64, 64);
+	for (int i = 0; i < 5; i++) {
+		mlx_image_to_window(mlx, game.imgenv[i], i * 64, 2 * 64);
+	}
+	for (int i = 5; i < 10; i++) {
+		mlx_image_to_window(mlx, game.imgenv[i], (i - 5) * 64, 3 * 64);
+	}
+	for (int i = 0; i < 2; i++) {
+		mlx_image_to_window(mlx, game.imgexit[i], (i + 5) * 64, 2 * 64);
 	}
 
 	mlx_loop_hook(mlx, &hook, mlx);
