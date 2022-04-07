@@ -108,14 +108,14 @@ int32_t	main(void)
 			if (map.map[i][j] == '1')
 			{
 				printf("1");
-				// mlx_image_to_window(mlx, game.imgenv[1], j * 64, i * 64);
+				mlx_image_to_window(mlx, game.imgenv[1], j * 64, i * 64);
 				// mlx_image_to_window(mlx, game.imgenv[ENV_FLOOR], j * 64, i * 64);
 			}
 			else if (map.map[i][j] == '0')
 			{
 				printf("0");
 				// mlx_image_to_window(mlx, game.imgenv[ENV_L_T], j * 64, i * 64);
-				// mlx_image_to_window(mlx, game.imgenv[0], j * 64, i * 64);
+				mlx_image_to_window(mlx, game.imgenv[0], j * 64, i * 64);
 			}
 		}
 		printf("\n");
