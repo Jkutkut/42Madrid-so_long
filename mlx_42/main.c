@@ -4,15 +4,12 @@
 #include <stdio.h>
 #include <unistd.h>
 #include <memory.h>
-#define WIDTH 256
+#define WIDTH 500
 #define HEIGHT 256
 
 mlx_image_t	*g_img;
-// mlx_texture_t *g_img;
-// xpm_t	*g_img;
 
 int32_t i1;
-int32_t i2;
 
 void	hook(void *param)
 {
@@ -29,16 +26,10 @@ void	hook(void *param)
 		g_img->instances[i1].x -= 5;
 	if (mlx_is_key_down(param, MLX_KEY_RIGHT))
 		g_img->instances[i1].x += 5;
-
-	if (mlx_is_key_down(param, MLX_KEY_W))
-		g_img->instances[i2].y -= 5;
-	if (mlx_is_key_down(param, MLX_KEY_S))
-		g_img->instances[i2].y += 5;
-	if (mlx_is_key_down(param, MLX_KEY_A))
-		g_img->instances[i2].x -= 5;
-	if (mlx_is_key_down(param, MLX_KEY_D))
-		g_img->instances[i2].x += 5;
 }
+
+#include "so_long_images.h"
+#include "so_long_structs.h"
 
 int32_t	main(void)
 {
@@ -47,21 +38,32 @@ int32_t	main(void)
 	mlx = mlx_init(WIDTH, HEIGHT, "MLX42", true);
 	if (!mlx)
 		exit(EXIT_FAILURE);
-	// g_img = mlx_new_image(mlx, 128, 128);
-	// memset(g_img->pixels, 255, g_img->width * g_img->height * sizeof(int));
-	mlx_texture_t *txt = mlx_load_png("../res/cat/cat01.png");
-	g_img = mlx_texture_to_image(mlx, txt);
-	mlx_delete_texture(txt);
 
-	i1 = mlx_image_to_window(mlx, g_img, 0, 0);
-	i2 = mlx_image_to_window(mlx, g_img, 30, 0);
+	t_game game;
+
+	game.mlx = mlx;
+	char src[100] = "../res/cat/cat00.png";
+	mlx_texture_t *t;
+	for (int i = 0; i < 8; i++) {
+		src[15] = '0' + i + 1;
+		t = mlx_load_png(src);
+		game.imgplayer[i] = mlx_texture_to_image(mlx, t);
+		mlx_delete_texture(t);
+	}
+
+	strcat(src, "../res/enemy/enemy00.png");
+	for (int i = 0; i < 8; i++) {
+		src[19] = '0' + i + 1;
+		t = mlx_load_png(src);
+		game.imgplayer[i] = mlx_texture_to_image(mlx, t);
+		mlx_delete_texture(t);
+	}
 	
+	for (int i = 0; i < 8; i++) {
+		mlx_image_to_window(mlx, game.imgplayer[i], i * 64, 0);
+	}
+
 	mlx_loop_hook(mlx, &hook, mlx);
 	mlx_loop(mlx);
-	mlx_delete_image(mlx, g_img);
-	mlx_terminate(mlx);
-	// free(mlx);
-	free(g_img);
-	free(txt);
 	return (EXIT_SUCCESS);
 }
