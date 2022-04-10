@@ -44,7 +44,7 @@ GAME_UI			=	load_imgs.c \
 
 GAME_CONTROL	=	can_move_there.c \
 					collect_coin.c \
-					key_press.c \
+					game_tick.c \
 					load_controls.c \
 					move_player.c
 

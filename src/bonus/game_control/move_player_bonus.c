@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:25:05 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 19:42:54 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,14 +108,20 @@ static void	update_enemies(t_game *game)
 void	move_player(int dx, int dy, t_game *game)
 {
 	static int	move_cooldown = 0;
+	int			i;
 
 	if (move_cooldown-- <= 0 && can_move_there(dx, dy, game))
 	{
 		game->player.x += dx;
 		game->player.y += dy;
 		update_moves(game);
-		game->imgplayer[game->p_index]->instances[0].x += dx * 64;
-		game->imgplayer[game->p_index]->instances[0].y += dy * 64;
+		i = 0;
+		while (i < P_ANI)
+		{
+			game->imgplayer[i]->instances[0].x += dx * 64;
+			game->imgplayer[i]->instances[0].y += dy * 64;
+			i++;
+		}
 		move_cooldown = 5;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:36:10 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:32:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:42:47 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,5 +19,5 @@
  */
 void	load_controls(t_game *game)
 {
-	mlx_loop_hook(game->mlx, &key_press, game);
+	mlx_loop_hook(game->mlx, &game_tick, game);
 }

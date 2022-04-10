@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   key_press_bonus.c                                  :+:      :+:    :+:   */
+/*   game_tick_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:48:44 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 19:41:37 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,33 @@ static int	either_key_pressed(keys_t k1, keys_t k2, t_game *game)
 	return (0);
 }
 
+static void	tick(t_game *game)
+{
+	static int	t = 0;
+	mlx_image_t	*p;
+
+	if (t++ == 7)
+	{
+		p = game->imgplayer[game->p_index];
+		game->p_index = (game->p_index + 1) % P_ANI;
+		game->e_index = (game->e_index + 1) % E_ANI;
+		p->instances[0].z = 0;
+		game->imgplayer[game->p_index]->instances[0].z = 2;
+		// while (i--)
+		// 	game->imgenemy[prev_p]->instances[i].z = 0;
+		t = 0;
+	}
+}
+
 /**
  * @brief Handles the key press event.
  * 
  * @param game Game structure.
  * @return int Value to return for the mlx function.
  */
-int	key_press(t_game *game)
+void	game_tick(t_game *game)
 {
-	// game_tick(game);
+	tick(game);
 	if (either_key_pressed(MLX_KEY_W, MLX_KEY_UP, game))
 		move_player(0, -1, game);
 	else if (either_key_pressed(MLX_KEY_S, MLX_KEY_DOWN, game))
@@ -40,5 +58,4 @@ int	key_press(t_game *game)
 		move_player(1, 0, game);
 	else if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		freeend(0, MSG_ENDGAME, game);
-	return (0);
 }
