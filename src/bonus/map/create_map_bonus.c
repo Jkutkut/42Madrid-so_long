@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:52:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/29 20:01:01 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:50:15 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,7 @@ t_map	*create_map(char **m)
 	if (!map)
 		end(1, ERROR_MALLOC);
 	map->map = m;
-	map->width = 0;
-	map->height = 0;
+	check_update_map(map);
+	print_map(map);
 	return (map);
 }

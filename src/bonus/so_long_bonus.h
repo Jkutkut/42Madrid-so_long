@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/04 09:47:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:50:43 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 // C libraries
 # include "../mlx/include/MLX42/MLX42.h"
-# define GAME_NAME "so_long Linux"
+# define GAME_NAME "so_long Bonus"
 # define MAX_WIDTH 29
 # define MAX_HEIGHT 16
 
