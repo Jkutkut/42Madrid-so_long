@@ -46,7 +46,8 @@ GAME_CONTROL	=	can_move_there.c \
 					collect_coin.c \
 					game_tick.c \
 					load_controls.c \
-					move_player.c
+					move_player.c \
+					tick.c
 
 
 MAP				=	check_map_filename.c \
