@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/05 22:15:32 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:50:43 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 17:30:00 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@
 # include "so_long_msgs_bonus.h"
 
 # include "game/game_bonus.h"
-// # include "game_control/game_control_bonus.h"
+# include "game_control/game_control_bonus.h"
 # include "game_UI/game_ui_bonus.h"
 # include "map/map_bonus.h"
 # include "tools/tools_bonus.h"
