@@ -1,10 +1,10 @@
 ## Docs:
 - Compi with minilibX:
 	- [link](https://harm-smits.github.io/42docs/libs/minilibx/getting_started.html)
+- Check latest version of mlx
 
 ## ThingsToDo:
 - Freeend on create_game
-- put pixel should put on img, not directly on canvas
 - mandatory with only one img
 - End without leaks -> clean_end
   - Invalid map
