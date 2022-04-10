@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 22:57:46 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 23:28:24 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,17 @@ void	move_player(int dx, int dy, t_game *game)
 			game->imgplayer[i]->instances[0].y += dy * IMG_SIZE;
 			i++;
 		}
+		if (game->map->map[game->player.y][game->player.x] == 'C')
+			collect_coin(game);
+		if (game->map->map[game->player.y][game->player.x] == 'E')
+			if (game->coins == 0)
+				freeend(0, MSG_WIN, game);
 		update_enemies(game);
+		i = -1;
+		while (game->enemies[++i])
+			if (game->enemies[i]->x == game->player.x)
+				if (game->enemies[i]->y == game->player.y)
+					freeend(0, MSG_LOSE, game);
 		move_cooldown = 5;
 	}
 }
