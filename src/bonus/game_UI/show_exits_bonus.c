@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 18:56:42 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/03/31 20:29:23 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 23:40:14 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,19 +20,16 @@
  */
 void	show_exits(t_game *game)
 {
-	int	i;
 	int	j;
 
 	j = 0;
-	while (j < game->map->height)
+	while (j < game->imgexit[EXIT_O]->count)
 	{
-		i = 0;
-		while (i < game->map->width)
-		{
-			if (game->map->map[j][i] == 'E')
-				show_cell(i, j, game);
-			i++;
-		}
-		j++;
+		game->imgexit[EXIT_O]->instances[j++].z = 1;
+	}
+	j = 0;
+	while (j < game->imgexit[EXIT_C]->count)
+	{
+		game->imgexit[EXIT_C]->instances[j++].z = 0;
 	}
 }
