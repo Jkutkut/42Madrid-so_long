@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:16:03 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 22:20:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 22:35:04 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,16 +14,6 @@
 # define GAME_CONTROL_BONUS_H
 
 # include "../so_long_bonus.h"
-
-# define KEY_ESC 65307
-# define KEY_W 119
-# define KEY_A 97
-# define KEY_S 115
-# define KEY_D 100
-# define KEY_LEFT 65361
-# define KEY_RIGHT 65363
-# define KEY_UP 65362
-# define KEY_DOWN 65364
 
 int		can_move_there(int x, int y, t_game *game);
 void	collect_coin(t_game *game);

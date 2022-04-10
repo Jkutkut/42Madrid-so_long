@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 19:42:54 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 22:46:58 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,23 @@ static int	enemy_collision(t_game *game, t_enemy *enemy, int x, int y)
 	return (0);
 }
 
+static void	move_enemy(int index, int dx, int dy, t_game *game)
+{
+	t_enemy *enemy;
+	int		i;
+
+	enemy = game->enemies[index];
+	enemy->x += dx;
+	enemy->y += dy;
+	i = 0;
+	while (i < E_ANI)
+	{
+		game->imgenemy[i]->instances[index].x = enemy->x * 64;
+		game->imgenemy[i]->instances[index].y = enemy->y * 64;
+		i++;
+	}
+}
+
 /**
  * @brief Attemps to move the given enemy.
  * 
@@ -45,11 +62,13 @@ static int	enemy_collision(t_game *game, t_enemy *enemy, int x, int y)
  * @param game Game structure.
  * @return int 1 if the enemy can move to the given position, 0 otherwise.
  */
-static int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
+static int	try_move_enemy(int index, int dx, int dy, t_game *game)
 {
+	t_enemy *enemy;
 	int	new_x;
 	int	new_y;
 
+	enemy = game->enemies[index];
 	if (dx != 0 && dy != 0)
 	{
 		if (rand() % 2 == 0)
@@ -67,8 +86,7 @@ static int	move_enemy(t_enemy *enemy, int dx, int dy, t_game *game)
 		return (0);
 	if (enemy_collision(game, enemy, new_x, new_y))
 		return (0);
-	enemy->x += dx;
-	enemy->y += dy;
+	move_enemy(index, dx, dy, game);
 	return (1);
 }
 
@@ -86,12 +104,11 @@ static void	update_enemies(t_game *game)
 	i = 0;
 	while (game->enemies[i])
 	{
-		show_cell(game->enemies[i]->x, game->enemies[i]->y, game);
 		while (1)
 		{
 			dx = rand() % 3 - 1;
 			dy = rand() % 3 - 1;
-			if (move_enemy(game->enemies[i], dx, dy, game))
+			if (try_move_enemy(i, dx, dy, game))
 				break ;
 		}
 		i++;
@@ -122,6 +139,7 @@ void	move_player(int dx, int dy, t_game *game)
 			game->imgplayer[i]->instances[0].y += dy * 64;
 			i++;
 		}
+		update_enemies(game);
 		move_cooldown = 5;
 	}
 }
