@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 19:41:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 20:35:40 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,8 @@ static void	tick(t_game *game)
 {
 	static int	t = 0;
 	mlx_image_t	*p;
+	int			i;
+	int			e;
 
 	if (t++ == 7)
 	{
@@ -33,8 +35,15 @@ static void	tick(t_game *game)
 		game->e_index = (game->e_index + 1) % E_ANI;
 		p->instances[0].z = 0;
 		game->imgplayer[game->p_index]->instances[0].z = 2;
-		// while (i--)
-		// 	game->imgenemy[prev_p]->instances[i].z = 0;
+		i = E_ANI;
+		while (i--)
+		{
+			e = 0;
+			while (e < /*game->*/2) // TODO
+				game->imgenemy[i]->instances[e++].z = 0;
+		}
+		while (e-- > 0)
+			game->imgenemy[game->e_index]->instances[e].z = 2;
 		t = 0;
 	}
 }
