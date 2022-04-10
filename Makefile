@@ -77,7 +77,11 @@ COMMON			=	so_long.c \
 
 BONUS_ONLY		=	game/count_enemy.c \
 					game/create_enemy.c \
-					game/get_enemies.c
+					game/get_enemies.c \
+					game_control/enemy_collision.c \
+					game_control/move_enemy.c \
+					game_control/try_move_enemy.c \
+					game_control/update_enemies.c \
 
 SRCS			=	${COMMON:%.c=src/mandatory/%.c}
 SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c} \
