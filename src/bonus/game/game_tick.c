@@ -1,23 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   load_controls_bonus.c                              :+:      :+:    :+:   */
+/*   game_tick.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/03/19 13:36:10 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:32:06 by jre-gonz         ###   ########.fr       */
+/*   Created: 2022/04/10 16:33:30 by jre-gonz          #+#    #+#             */
+/*   Updated: 2022/04/10 16:42:13 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "game_control_bonus.h"
+#include "game_bonus.h"
 
-/**
- * @brief Loads the controls for the game.
- * 
- * @param game Game to load the controls to.
- */
-void	load_controls(t_game *game)
+void	game_tick(t_game *game)
 {
-	mlx_loop_hook(game->mlx, &key_press, game);
+	// static int	i = 0;
+
+	// if (i++ == 10000)
+	// {
+	// 	game->p_index = (game->p_index + 1) % P_ANI;
+	// 	game->e_index = (game->e_index + 1) % E_ANI;
+	// 	show_enemies(game);
+	// 	show_player(game);
+	// 	i = 0;
+	// }
 }

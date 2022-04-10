@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:34:44 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 08:17:11 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/10 16:30:03 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ t_game	*create_game(t_map *map)
 	game->p_index = 0;
 	game->e_index = 0;
 	get_player(game);
-	// get_enemies(game);
+	get_enemies(game);
 	game->mlx = mlx_init(map->width * 64, map->height * 64, "so_long", false);
 	if (!game->mlx)
 		freeend(1, ERROR_MLX_INIT, game);
