@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 22:17:18 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 10:39:26 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,11 @@ static int	either_key_pressed(keys_t k1, keys_t k2, t_game *game)
  * @param game Game structure.
  * @return int Value to return for the mlx function.
  */
-void	game_tick(t_game *game)
+void	game_tick(void *g)
 {
+	t_game	*game;
+
+	game = (t_game *)g;
 	tick(game);
 	if (either_key_pressed(MLX_KEY_W, MLX_KEY_UP, game))
 		move_player(0, -1, game);

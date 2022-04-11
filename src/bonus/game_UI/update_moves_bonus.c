@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/05 07:53:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 10:50:59 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,7 @@ void	update_moves(t_game *game)
 	// 	moves_str[i--] = m % 10 + '0';
 	// 	m /= 10;
 	// }
+	// mlx_put_string(game->mlx, moves_str, 10, 20);
 	// show_img(game->imgenv[ENV_C_TL], 0, 0, game);
 	// show_cell(1, 0, game);
 	// mlx_string_put(game->mlx, game->win, 10, 20, 0xFFFFFF, moves_str);

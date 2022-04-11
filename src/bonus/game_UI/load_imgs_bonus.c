@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 13:25:51 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:16:41 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 10:41:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@
  */
 static mlx_image_t	*load_png(t_game *game, char *path)
 {
-	int				i;
 	mlx_image_t		*img;
 	mlx_texture_t	*texture;
 

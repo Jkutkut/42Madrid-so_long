@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 17:53:18 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:29:30 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 10:42:31 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,6 @@ void	show_level(t_game *game)
 {
 	int	i;
 	int	j;
-	int DELAY = 0;
 
 	show_border(game);
 	i = 0;
