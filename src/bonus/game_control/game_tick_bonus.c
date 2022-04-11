@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 10:39:26 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:11:29 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,8 @@ void	game_tick(void *g)
 		move_player(-1, 0, game);
 	else if (either_key_pressed(MLX_KEY_D, MLX_KEY_RIGHT, game))
 		move_player(1, 0, game);
-	else if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
+	else
+		move_cooldown(1);
+	if (mlx_is_key_down(game->mlx, MLX_KEY_ESCAPE))
 		freeend(0, MSG_ENDGAME, game);
 }

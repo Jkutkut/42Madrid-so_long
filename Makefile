@@ -46,6 +46,7 @@ GAME_CONTROL	=	can_move_there.c \
 					collect_coin.c \
 					game_tick.c \
 					load_controls.c \
+					move_cooldown.c \
 					move_player.c \
 					tick.c
 

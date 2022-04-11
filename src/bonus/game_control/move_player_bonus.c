@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 10:47:07 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 12:19:53 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,10 +21,9 @@
  */
 void	move_player(int dx, int dy, t_game *game)
 {
-	static int	move_cooldown = 0;
 	int			i;
 
-	if (move_cooldown-- <= 0 && can_move_there(dx, dy, game))
+	if (move_cooldown(0) && can_move_there(dx, dy, game))
 	{
 		game->player.x += dx;
 		game->player.y += dy;
@@ -47,6 +46,5 @@ void	move_player(int dx, int dy, t_game *game)
 			if (game->enemies[i]->x == game->player.x)
 				if (game->enemies[i]->y == game->player.y)
 					freeend(0, MSG_LOSE, game);
-		move_cooldown = 5;
 	}
 }
