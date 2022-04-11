@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 12:08:52 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 23:26:36 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/11 11:43:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,14 +24,19 @@ void	collect_coin(t_game *game)
 
 	if (game->map->map[game->player.y][game->player.x] != 'C')
 		return ;
-	game->coins--;
 	i = -1;
-	while (++i)
-		if (game->imgcoin->instances[i].x == game->player.x)
-			if (game->imgcoin->instances[i].y == game->player.y)
-				break;
+	while (++i < game->imgcoin->count)
+	{
+		if (game->imgcoin->instances[i].z == 0)
+			continue ;
+		if (game->imgcoin->instances[i].x / IMG_SIZE == game->player.x &&\
+			game->imgcoin->instances[i].y / IMG_SIZE == game->player.y)
+				break ;
+	}
+	if (i == game->imgcoin->count)
+		return ;
 	game->imgcoin->instances[i].z = 0;
-	printf("Coin collected, %d remaining\n", game->coins);
+	game->coins--;
 	game->map->map[game->player.y][game->player.x] = '0';
 	if (game->coins == 0)
 		show_exits(game);
