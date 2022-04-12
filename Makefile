@@ -1,6 +1,6 @@
 # Compiler options
 CC				=	gcc
-FLAGS			=	-Wall -Wextra #-fsanitize=address # -Werror -fsanitize=address
+FLAGS			=	-Wall -Wextra -Werror #-fsanitize=address
 COMPILE			=	$(CC) $(FLAGS)
 NAME			=	so_long
 
@@ -14,7 +14,7 @@ YELLOW			=	\033[1;33m
 LBLUE			=	\033[1;34m
 TITLE			=	\033[38;5;33m
 
-OS			=	$(shell uname -s)
+OS				=	$(shell uname -s)
 
 # Libraries
 LIBFT			=	src/libft/libft.a
@@ -73,8 +73,7 @@ COMMON			=	so_long.c \
 					${GAME_CONTROL:%=game_control/%} \
 					${GAME_UI:%=game_UI/%} \
 					${MAP:%=map/%} \
-					${TOOLS:%=tools/%} \
-					
+					${TOOLS:%=tools/%}
 
 BONUS_ONLY		=	game/count_enemy.c \
 					game/create_enemy.c \
@@ -82,7 +81,7 @@ BONUS_ONLY		=	game/count_enemy.c \
 					game_control/enemy_collision.c \
 					game_control/move_enemy.c \
 					game_control/try_move_enemy.c \
-					game_control/update_enemies.c \
+					game_control/update_enemies.c
 
 SRCS			=	${COMMON:%.c=src/mandatory/%.c}
 SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c} \
