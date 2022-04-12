@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 13:52:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/12 09:32:05 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:41:07 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,6 +28,7 @@ t_map	*create_map(char **m)
 	map = (t_map *) malloc(sizeof(t_map));
 	if (!map)
 	{
+		i = 0;
 		while (m[i])
 			free(m[i++]);
 		free(m);
