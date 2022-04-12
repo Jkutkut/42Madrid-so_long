@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:14:13 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/12 10:05:09 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/12 10:06:17 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,6 +68,8 @@ void	freeend(int endtype, char *msg, t_game *game)
 		free_img_arr(game->imgexit, 2, game);
 		free_img_arr(game->imgenv, ENV_SRCS, game);
 		mlx_terminate(game->mlx);
+		if (game->moves)
+			mlx_delete_image(game->mlx, game->moves);
 		free(game);
 	}
 	end(endtype, msg);
