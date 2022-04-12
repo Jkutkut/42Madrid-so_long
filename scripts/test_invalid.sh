@@ -30,7 +30,8 @@ main() {
 
 		result=$(timeout -k9 1 ./so_long $i 2>&1)
 		isError=$(echo "$result" | grep "Error")
-		isTimeout=$(echo $result | cat -e)
+		# isTimeout=$(echo $result | cat -e)
+		isTimeout=$(echo $result)
 		if [ ! "$isError" = "" ]; then
 			echo "${GREEN}OK${NC}"
 		elif [ ! "$isTimeout" = "" ]; then
