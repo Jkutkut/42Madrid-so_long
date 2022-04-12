@@ -6,12 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:34:24 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 17:03:42 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/12 11:29:51 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMAGES_BONUS_H
-# define IMAGES_BONUS_H
+#ifndef SO_LONG_IMAGES_BONUS_H
+# define SO_LONG_IMAGES_BONUS_H
 
 # define IMG_SIZE 64
 # define IMG_IND "0.png"
@@ -22,17 +22,11 @@
 # define ENEMY_SRC_BASE "./res/enemy/enemy00.png"
 # define E_ANI 4
 
-# ifndef COIN_SRC
-#  define COIN_SRC "./res/env/C/key01.png"
-# endif
+# define COIN_SRC "./res/env/C/key01.png"
 
-# ifndef EXIT_CLOSED_SRC
-#  define EXIT_CLOSED_SRC "./res/env/E/trapdoor02.png"
-# endif
+# define EXIT_CLOSED_SRC "./res/env/E/trapdoor02.png"
 
-# ifndef EXIT_OPEN_SRC
-#  define EXIT_OPEN_SRC "./res/env/E/stairs01.png"
-# endif
+# define EXIT_OPEN_SRC "./res/env/E/stairs01.png"
 
 # define EXIT_O 0
 # define EXIT_C 1
