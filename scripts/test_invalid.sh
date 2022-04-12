@@ -34,8 +34,8 @@ main() {
 		isTimeout=$(echo $result)
 		if [ ! "$isError" = "" ]; then
 			echo "${GREEN}OK${NC}"
-		elif [ ! "$isTimeout" = "" ]; then
-			echo "${RED}timeout${NC}"
+		# elif [ ! "$isTimeout" = "" ]; then
+		# 	echo "${RED}timeout${NC}"
 		else
 			echo "${RED}KO${NC}"
 			break
