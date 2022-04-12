@@ -4,8 +4,12 @@ runleak() {
 	echo "valgrind --leak-check=yes ./$@"
 	valgrind \
 		--leak-check=yes --track-origins=yes \
-		--leak-check=full --show-leak-kinds=all \
+		--show-leak-kinds=all \
 		./$@
+	# valgrind \
+	# 	--leak-check=yes --track-origins=yes \
+	# 	--leak-check=full --show-leak-kinds=all \
+	# 	./$@
 }
 
 make
