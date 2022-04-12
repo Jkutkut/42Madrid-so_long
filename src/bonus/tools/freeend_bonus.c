@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:14:13 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/12 09:24:04 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/12 09:52:36 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,11 +26,10 @@ static void	free_img_arr(mlx_image_t **img, int len, t_game *game)
 	if (!img)
 		return ;
 	i = 0;
-	// while (i < len && img[i])
-	// {
-	// 	mlx_destroy_image(game->mlx, img[i++]);
-	// }
-	free(img);
+	while (i < len && img[i])
+	{
+		mlx_delete_image(game->mlx, img[i++]);
+	}
 }
 
 /**
@@ -42,16 +41,14 @@ static void	free_img_arr(mlx_image_t **img, int len, t_game *game)
  */
 void	freeend(int endtype, char *msg, t_game *game)
 {
-	freemap(game->map);
 	if (game)
 	{
-		// free_img_arr(game->imgplayer, P_ANI, game);
-		// free_img_arr(game->imgenemy, E_ANI, game);
-		// mlx_destroy_image(game->mlx, game->imgcoin);
-		// free_img_arr(game->imgexit, 2, game);
-		// free_img_arr(game->imgenv, ENV_SRCS, game);
-		// mlx_destroy_window(game->mlx, game->win);
-		// mlx_destroy_display(game->mlx);
+		freemap(game->map);
+		free_img_arr(game->imgplayer, P_ANI, game);
+		free_img_arr(game->imgenemy, E_ANI, game);
+		mlx_delete_image(game->mlx, game->imgcoin);
+		free_img_arr(game->imgexit, 2, game);
+		free_img_arr(game->imgenv, ENV_SRCS, game);
 		mlx_terminate(game->mlx);
 		free(game);
 	}
