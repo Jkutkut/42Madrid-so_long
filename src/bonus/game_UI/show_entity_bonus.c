@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 21:36:21 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:17:20 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:01:33 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,5 +22,8 @@
  */
 void	show_entity(mlx_image_t *entity, int x, int y, t_game *game)
 {
-	show_img(entity, x, y, 2, game);
+	int	index;
+
+	index = mlx_image_to_window(game->mlx, entity, x * 64, y * 64);
+	entity->instances[index].z = 2;
 }

@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 17:41:06 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 16:26:30 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:48:18 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ void	show_wall(t_game *game, int x, int y)
 	if (game->map->map[y][x] != '1')
 		return ;
 	if (game->map->height > y + 1 && game->map->map[y + 1][x] == '1')
-		show_img(game->imgenv[ENV_WALL], x, y, 0, game);
+		show_img(game->imgenv[ENV_WALL], x, y, game);
 	else
-		show_img(game->imgenv[ENV_L_T], x, y, 0, game);
+		show_img(game->imgenv[ENV_L_T], x, y, game);
 }
