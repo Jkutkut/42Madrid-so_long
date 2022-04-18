@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:11:58 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 12:19:53 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:03:47 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,30 +21,29 @@
  */
 void	move_player(int dx, int dy, t_game *game)
 {
-	int			i;
+	int	i;
 
-	if (move_cooldown(0) && can_move_there(dx, dy, game))
+	if (!move_cooldown(0) || !can_move_there(dx, dy, game))
+		return ;
+	game->player.x += dx;
+	game->player.y += dy;
+	update_moves(game);
+	i = 0;
+	while (i < P_ANI)
 	{
-		game->player.x += dx;
-		game->player.y += dy;
-		update_moves(game);
-		i = 0;
-		while (i < P_ANI)
-		{
-			game->imgplayer[i]->instances[0].x += dx * IMG_SIZE;
-			game->imgplayer[i]->instances[0].y += dy * IMG_SIZE;
-			i++;
-		}
-		if (game->map->map[game->player.y][game->player.x] == 'C')
-			collect_coin(game);
-		if (game->map->map[game->player.y][game->player.x] == 'E')
-			if (game->coins == 0)
-				freeend(0, MSG_WIN, game);
-		update_enemies(game);
-		i = -1;
-		while (game->enemies[++i])
-			if (game->enemies[i]->x == game->player.x)
-				if (game->enemies[i]->y == game->player.y)
-					freeend(0, MSG_LOSE, game);
+		game->imgplayer[i]->instances[0].x += dx * IMG_SIZE;
+		game->imgplayer[i]->instances[0].y += dy * IMG_SIZE;
+		i++;
 	}
+	if (game->map->map[game->player.y][game->player.x] == 'C')
+		collect_coin(game);
+	if (game->map->map[game->player.y][game->player.x] == 'E')
+		if (game->coins == 0)
+			freeend(0, MSG_WIN, game);
+	update_enemies(game);
+	i = -1;
+	while (game->enemies[++i])
+		if (game->enemies[i]->x == game->player.x)
+			if (game->enemies[i]->y == game->player.y)
+				freeend(0, MSG_LOSE, game);
 }

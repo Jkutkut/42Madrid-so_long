@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 11:16:37 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 16:07:14 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ void	update_moves(t_game *game)
 
 	ft_memmove(moves_str, "Moves:     ", 12);
 	m = ++moves;
-	i = 11;
+	i = 10;
 	while (m != 0)
 	{
 		moves_str[i--] = m % 10 + '0';
