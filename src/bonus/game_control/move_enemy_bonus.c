@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:50:43 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 22:59:03 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:07:28 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@
  */
 void	move_enemy(int index, int dx, int dy, t_game *game)
 {
-	t_enemy *enemy;
+	t_enemy	*enemy;
 	int		i;
 
 	enemy = game->enemies[index];

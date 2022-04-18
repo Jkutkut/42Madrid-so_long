@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 12:08:52 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 11:43:42 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:06:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,9 +29,9 @@ void	collect_coin(t_game *game)
 	{
 		if (game->imgcoin->instances[i].z == 0)
 			continue ;
-		if (game->imgcoin->instances[i].x / IMG_SIZE == game->player.x &&\
+		if (game->imgcoin->instances[i].x / IMG_SIZE == game->player.x && \
 			game->imgcoin->instances[i].y / IMG_SIZE == game->player.y)
-				break ;
+			break ;
 	}
 	if (i == game->imgcoin->count)
 		return ;

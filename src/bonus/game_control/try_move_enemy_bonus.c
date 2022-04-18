@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:48:50 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 22:59:13 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:08:18 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@
  */
 int	try_move_enemy(int index, int dx, int dy, t_game *game)
 {
-	t_enemy *enemy;
-	int	new_x;
-	int	new_y;
+	t_enemy	*enemy;
+	int		new_x;
+	int		new_y;
 
 	enemy = game->enemies[index];
 	if (dx != 0 && dy != 0)

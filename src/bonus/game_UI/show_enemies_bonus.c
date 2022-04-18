@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:04:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/10 19:58:46 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/18 15:08:56 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,7 +28,6 @@ static void	show_enemy(t_game *game, int x, int y)
 		i++;
 	}
 	game->imgenemy[0]->instances[instance].z = 2;
-
 }
 
 /**
