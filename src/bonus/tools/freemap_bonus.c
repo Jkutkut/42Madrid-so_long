@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:08:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/19 15:33:00 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 16:52:33 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,13 +21,12 @@ void	freemap(t_map *m)
 {
 	int	i;
 
-	printf("%p -> %p\n", m, m->map);
 	if (!m)
 		return ;
 	if (m->map)
 	{
 		i = 0;
-		while (i < m->height && m->map[i])
+		while (m->map[i])
 		{
 			free(m->map[i]);
 			i++;
