@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/10 11:22:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/12 09:41:03 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 15:32:55 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@
  */
 static void	free_map_end(t_map *map, int endtype, char *msg)
 {
+	printf("free map\n"); // TODO
 	freemap(map);
 	end(endtype, msg);
 }
