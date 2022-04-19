@@ -6,12 +6,17 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 22:04:08 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/18 15:08:56 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:12:27 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_ui_bonus.h"
 
+/**
+ * @brief Show the enemy on the game board.
+ * 
+ * @param game Game playing.
+ */
 static void	show_enemy(t_game *game, int x, int y)
 {
 	int			i;

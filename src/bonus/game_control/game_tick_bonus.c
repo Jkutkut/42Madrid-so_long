@@ -6,12 +6,20 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/19 13:17:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 12:11:29 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 20:37:02 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control_bonus.h"
 
+/**
+ * @brief Checks either one of the given keys is being pressed.
+ * 
+ * @param k1 First key.
+ * @param k1 Second key.
+ * @param game Game to check.
+ * @return int 1 if true. Else 0.
+ */
 static int	either_key_pressed(keys_t k1, keys_t k2, t_game *game)
 {
 	if (mlx_is_key_down(game->mlx, k1))

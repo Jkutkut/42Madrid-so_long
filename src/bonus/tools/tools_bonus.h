@@ -6,14 +6,12 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/07 11:56:33 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/02 11:39:11 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:08:38 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef TOOLS_BONUS_H
 # define TOOLS_BONUS_H
-
-# include <stdlib.h>
 
 # include "../so_long_bonus.h"
 

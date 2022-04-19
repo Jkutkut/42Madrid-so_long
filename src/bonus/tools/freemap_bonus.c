@@ -6,14 +6,14 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/12 13:08:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/19 16:52:33 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:09:02 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "tools_bonus.h"
 
 /**
- * @brief Frees the map.
+ * @brief Frees the given map.
  * 
  * @param m Map to free.
  */

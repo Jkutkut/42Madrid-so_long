@@ -6,12 +6,14 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:39:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/11 11:15:49 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 20:35:35 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef SO_LONG_STRUCTS_BONUS_H
 # define SO_LONG_STRUCTS_BONUS_H
+
+# include "./so_long_bonus.h"
 
 typedef struct s_coord
 {

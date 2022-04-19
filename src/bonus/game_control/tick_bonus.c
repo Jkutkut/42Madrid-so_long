@@ -6,12 +6,17 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:17:12 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/18 15:07:59 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 19:14:43 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "game_control_bonus.h"
 
+/**
+ * @brief Handles the animation of the sprites
+ * 
+ * @param game Game structure.
+ */
 void	tick(t_game *game)
 {
 	static int	t = 0;
