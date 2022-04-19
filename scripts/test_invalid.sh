@@ -16,6 +16,13 @@ main() {
 		return
 	fi
 
+	if [ "$1" = "checkLeaks" ]; then
+		checkLeaks=true
+		shift
+	else
+		checkLeaks=false
+	fi
+
 	if [ "$1" = "bonus" ]; then
 		echo "Test invalid Bonus"
 		make bonus
@@ -33,12 +40,23 @@ main() {
 		# isTimeout=$(echo $result | cat -e)
 		isTimeout=$(echo $result)
 		if [ ! "$isError" = "" ]; then
-			echo "${GREEN}OK${NC}"
+			echo "${GREEN}OK${NC} \c"
 		# elif [ ! "$isTimeout" = "" ]; then
 		# 	echo "${RED}timeout${NC}"
 		else
-			echo "${RED}KO${NC}"
+			echo "${RED}KO${NC} \c"
 			break
+		fi
+		if $checkLeaks; then
+			isLeakFree=$(echo "$result" | grep "0 leaks for 0 total")
+			if [ "$isLeakFree" = "" ]; then
+				echo "${RED}[LEAKS KO]${NC}"
+				echo "$result"
+			else
+				echo "${GREEN}[LEAKS OK]${NC}"
+			fi
+		else
+			echo
 		fi
 	done ||
 	{
