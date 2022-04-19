@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/04/10 22:48:50 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/18 15:08:18 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/19 15:11:45 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int	try_move_enemy(int index, int dx, int dy, t_game *game)
 		return (0);
 	if (new_y == 0 || new_y == game->map->height - 1)
 		return (0);
-	if (game->map->map[new_y][new_x] == '1')
+	if (ft_hasany("1CE", game->map->map[new_y][new_x]))
 		return (0);
 	if (enemy_collision(game, enemy, new_x, new_y))
 		return (0);
