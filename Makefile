@@ -30,10 +30,16 @@ endif
 GAME			=	create_game.c \
 					get_player.c
 
+GAME_CONTROL	=	can_move_there.c \
+					collect_coin.c \
+					game_tick.c \
+					load_controls.c \
+					move_cooldown.c \
+					move_player.c
+
 GAME_UI			=	load_imgs.c \
 					show_border.c \
 					show_cell.c \
-					show_enemies.c \
 					show_entity.c \
 					show_exits.c \
 					show_img.c \
@@ -41,15 +47,6 @@ GAME_UI			=	load_imgs.c \
 					show_player.c \
 					show_wall.c \
 					update_moves.c
-
-GAME_CONTROL	=	can_move_there.c \
-					collect_coin.c \
-					game_tick.c \
-					load_controls.c \
-					move_cooldown.c \
-					move_player.c \
-					tick.c
-
 
 MAP				=	check_map_filename.c \
 					check_unique_player.c \
@@ -81,7 +78,9 @@ BONUS_ONLY		=	game/count_enemy.c \
 					game_control/enemy_collision.c \
 					game_control/move_enemy.c \
 					game_control/try_move_enemy.c \
-					game_control/update_enemies.c
+					game_control/update_enemies.c \
+					game_control/tick.c \
+					game_UI/show_enemies.c
 
 SRCS			=	${COMMON:%.c=src/mandatory/%.c}
 SRCS_BONUS		=	${COMMON:%.c=src/bonus/%_bonus.c} \
