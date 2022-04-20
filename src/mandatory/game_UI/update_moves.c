@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/20 11:35:23 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/20 15:11:51 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/20 15:38:36 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ void	update_moves(void)
 	static int	moves = 0;
 	int			m;
 	int			i;
-	char		moves_str[12];
+	char		moves_str[13];
 
 	ft_memmove(moves_str, "\rMoves:     ", 13);
 	m = ++moves;
