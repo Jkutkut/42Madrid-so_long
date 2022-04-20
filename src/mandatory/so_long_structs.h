@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:39:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/20 09:39:46 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/20 09:53:55 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ typedef struct s_game
 	t_player	player;
 	int			p_index;
 	int			coins;
-	mlx_image_t	*imgplayer[P_ANI];
+	mlx_image_t	*imgplayer;
 	mlx_image_t	*imgcoin;
 	mlx_image_t	*imgexit[2];
 	mlx_image_t	*imgenv[ENV_SRCS];

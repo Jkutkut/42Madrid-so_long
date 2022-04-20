@@ -16,8 +16,7 @@
 # define IMG_SIZE 64
 # define IMG_IND "0.png"
 
-# define PLAYER_SRC_BASE "./res/cat/cat00.png"
-# define P_ANI 8
+# define PLAYER_SRC "./res/cat/cat01.png"
 
 # define COIN_SRC "./res/env/C/key01.png"
 
