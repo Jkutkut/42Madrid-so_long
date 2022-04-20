@@ -108,14 +108,14 @@ bin/%.o: src/%.c
 
 $(MINILIBX):
 	@echo "- ${TITLE}Compiling${NC} ${YELLOW}MINILIBX${NC}"
-	@make -s -C $(dir $(MINILIBX))
+	@make -C $(dir $(MINILIBX))
 	@echo "   - MINILIBX ${GREEN}compiled [OK]${NC}\n"
 
 $(LIBFT):
 	@make -C $(dir $(LIBFT)) BIN="../../bin/libft"
 
 # Clean logic
-.PHONY: re fclean clean $(MINILIBX)
+.PHONY: re fclean clean
 
 re: fclean all
 
