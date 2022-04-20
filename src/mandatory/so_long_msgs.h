@@ -1,17 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   so_long_msgs_bonus.h                               :+:      :+:    :+:   */
+/*   so_long_msgs.h                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/28 13:04:45 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/20 08:57:09 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/02 12:39:09 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef SO_LONG_MSGS_BONUS_H
-# define SO_LONG_MSGS_BONUS_H
+#ifndef SO_LONG_MSGS_H
+# define SO_LONG_MSGS_H
 
 # define ERROR_INVALID_ARGS "Invalid number of arguments.\n"
 # define ERROR_MALLOC "Malloc failed\n"
