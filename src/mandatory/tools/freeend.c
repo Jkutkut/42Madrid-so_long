@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 17:14:13 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/20 09:39:32 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/20 10:53:42 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,7 @@ void	freeend(int endtype, char *msg, t_game *game)
 	if (game)
 	{
 		freemap(game->map);
-		free_img_arr(game->imgplayer, P_ANI, game);
+		mlx_delete_image(game->mlx, game->imgplayer);
 		mlx_delete_image(game->mlx, game->imgcoin);
 		free_img_arr(game->imgexit, 2, game);
 		free_img_arr(game->imgenv, ENV_SRCS, game);
