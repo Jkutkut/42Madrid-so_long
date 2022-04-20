@@ -6,7 +6,7 @@
 /*   By: jre-gonz <jre-gonz@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/03/13 18:39:01 by jre-gonz          #+#    #+#             */
-/*   Updated: 2022/04/20 09:36:06 by jre-gonz         ###   ########.fr       */
+/*   Updated: 2022/04/20 09:39:46 by jre-gonz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,6 @@ typedef struct s_game
 	mlx_image_t	*imgexit[2];
 	mlx_image_t	*imgenv[ENV_SRCS];
 	void		*mlx;
-	mlx_image_t	*moves;
 }				t_game;
 
 #endif
