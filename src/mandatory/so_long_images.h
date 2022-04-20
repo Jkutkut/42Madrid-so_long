@@ -19,9 +19,6 @@
 # define PLAYER_SRC_BASE "./res/cat/cat00.png"
 # define P_ANI 8
 
-# define ENEMY_SRC_BASE "./res/enemy/enemy00.png"
-# define E_ANI 4
-
 # define COIN_SRC "./res/env/C/key01.png"
 
 # define EXIT_CLOSED_SRC "./res/env/E/trapdoor02.png"
